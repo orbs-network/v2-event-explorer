@@ -21,6 +21,10 @@ This should also launch the broser.
 ## Building the dashboard
 To create a static version of the dashboard that can be deployed to any static web service (such as GithubPages), run:
 
-`cd frontend && npm run build`
+```
+export REACT_APP_API_URL=<The collector API endpoint - e.g. https://orbsv2-event-explorer.herokuapp.com/api>
+export PUBLIC_URL=<The base url for the dashbaord, e.g. https://orbs-network.github.io/v2-event-dashbaord>
+cd frontend && npm run build
+```
 
 This will create a `build` folder under the `frontend` directory, with a static version of the dashboard.
