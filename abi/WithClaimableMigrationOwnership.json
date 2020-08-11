@@ -1,0 +1,3841 @@
+{
+  "contractName": "WithClaimableMigrationOwnership",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousMigrationOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newMigrationOwner",
+          "type": "address"
+        }
+      ],
+      "name": "MigrationOwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "migrationOwner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isMigrationOwner",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceMigrationOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newMigrationOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferMigrationOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "claimMigrationOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousMigrationOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newMigrationOwner\",\"type\":\"address\"}],\"name\":\"MigrationOwnershipTransferred\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[],\"name\":\"claimMigrationOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"isMigrationOwner\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"migrationOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"renounceMigrationOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"newMigrationOwner\",\"type\":\"address\"}],\"name\":\"transferMigrationOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Extension for the Ownable contract, where the ownership needs to be claimed. This allows the new owner to accept the transfer.\",\"methods\":{\"claimMigrationOwnership()\":{\"details\":\"Allows the pendingMigrationOwner address to finalize the transfer.\"},\"constructor\":{\"details\":\"Initializes the contract setting the deployer as the initial migrationMigrationOwner.\"},\"isMigrationOwner()\":{\"details\":\"Returns true if the caller is the current migrationOwner.\"},\"migrationOwner()\":{\"details\":\"Returns the address of the current migrationOwner.\"},\"renounceMigrationOwnership()\":{\"details\":\"Leaves the contract without migrationOwner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current migrationOwner.     * NOTE: Renouncing migrationOwnership will leave the contract without an migrationOwner, thereby removing any functionality that is only available to the migrationOwner.\"},\"transferMigrationOwnership(address)\":{\"details\":\"Allows the current migrationOwner to set the pendingOwner address.\",\"params\":{\"newMigrationOwner\":\"The address to transfer migrationOwnership to.\"}}},\"title\":\"Claimable\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/WithClaimableMigrationOwnership.sol\":\"WithClaimableMigrationOwnership\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/WithClaimableMigrationOwnership.sol\":{\"keccak256\":\"0x2fc5723c9ad17fc19ffdd33423a8d8c47b3fe3aaf023f51918af85b1687887fc\",\"urls\":[\"bzz-raw://4b7b6a22c7d0d60700d385fe4a1e5e2e23084ea1af353f5209030471b6acda50\",\"dweb:/ipfs/QmVLcZ3kdLZzExvPph6VDU8ULk7XG8fGDnW27xH4pHRkea\"]},\"@openzeppelin/contracts/GSN/Context.sol\":{\"keccak256\":\"0x90a3995645af7562d84b9d69363ffa5ae7217714ab61e951bf7bc450f40e4061\",\"urls\":[\"bzz-raw://216ef9d6b614db4eb46970b4e84903f2534a45572dd30a79f0041f1a5830f436\",\"dweb:/ipfs/QmNPrJ4MWKUAWzKXpUqeyKRUfosaoANZAqXgvepdrCwZAG\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity 0.5.16;\n\n\nimport \"@openzeppelin/contracts/GSN/Context.sol\";\n\n/**\n * @title Claimable\n * @dev Extension for the Ownable contract, where the ownership needs to be claimed.\n * This allows the new owner to accept the transfer.\n */\ncontract WithClaimableMigrationOwnership is Context{\n    address private _migrationOwner;\n    address pendingMigrationOwner;\n\n    event MigrationOwnershipTransferred(address indexed previousMigrationOwner, address indexed newMigrationOwner);\n\n    /**\n     * @dev Initializes the contract setting the deployer as the initial migrationMigrationOwner.\n     */\n    constructor () internal {\n        address msgSender = _msgSender();\n        _migrationOwner = msgSender;\n        emit MigrationOwnershipTransferred(address(0), msgSender);\n    }\n\n    /**\n     * @dev Returns the address of the current migrationOwner.\n     */\n    function migrationOwner() public view returns (address) {\n        return _migrationOwner;\n    }\n\n    /**\n     * @dev Throws if called by any account other than the migrationOwner.\n     */\n    modifier onlyMigrationOwner() {\n        require(isMigrationOwner(), \"WithClaimableMigrationOwnership: caller is not the migrationOwner\");\n        _;\n    }\n\n    /**\n     * @dev Returns true if the caller is the current migrationOwner.\n     */\n    function isMigrationOwner() public view returns (bool) {\n        return _msgSender() == _migrationOwner;\n    }\n\n    /**\n     * @dev Leaves the contract without migrationOwner. It will not be possible to call\n     * `onlyOwner` functions anymore. Can only be called by the current migrationOwner.\n     *\n     * NOTE: Renouncing migrationOwnership will leave the contract without an migrationOwner,\n     * thereby removing any functionality that is only available to the migrationOwner.\n     */\n    function renounceMigrationOwnership() public onlyMigrationOwner {\n        emit MigrationOwnershipTransferred(_migrationOwner, address(0));\n        _migrationOwner = address(0);\n    }\n\n    /**\n     * @dev Transfers migrationOwnership of the contract to a new account (`newOwner`).\n     */\n    function _transferMigrationOwnership(address newMigrationOwner) internal {\n        require(newMigrationOwner != address(0), \"MigrationOwner: new migrationOwner is the zero address\");\n        emit MigrationOwnershipTransferred(_migrationOwner, newMigrationOwner);\n        _migrationOwner = newMigrationOwner;\n    }\n\n    /**\n     * @dev Modifier throws if called by any account other than the pendingOwner.\n     */\n    modifier onlyPendingMigrationOwner() {\n        require(msg.sender == pendingMigrationOwner, \"Caller is not the pending migrationOwner\");\n        _;\n    }\n    /**\n     * @dev Allows the current migrationOwner to set the pendingOwner address.\n     * @param newMigrationOwner The address to transfer migrationOwnership to.\n     */\n    function transferMigrationOwnership(address newMigrationOwner) public onlyMigrationOwner {\n        pendingMigrationOwner = newMigrationOwner;\n    }\n    /**\n     * @dev Allows the pendingMigrationOwner address to finalize the transfer.\n     */\n    function claimMigrationOwnership() external onlyPendingMigrationOwner {\n        _transferMigrationOwnership(pendingMigrationOwner);\n        pendingMigrationOwner = address(0);\n    }\n}\n",
+  "sourcePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/WithClaimableMigrationOwnership.sol",
+  "ast": {
+    "absolutePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/WithClaimableMigrationOwnership.sol",
+    "exportedSymbols": {
+      "WithClaimableMigrationOwnership": [
+        9908
+      ]
+    },
+    "id": 9909,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 9762,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:20"
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts/GSN/Context.sol",
+        "file": "@openzeppelin/contracts/GSN/Context.sol",
+        "id": 9763,
+        "nodeType": "ImportDirective",
+        "scope": 9909,
+        "sourceUnit": 11100,
+        "src": "26:49:20",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 9764,
+              "name": "Context",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 11099,
+              "src": "287:7:20",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Context_$11099",
+                "typeString": "contract Context"
+              }
+            },
+            "id": 9765,
+            "nodeType": "InheritanceSpecifier",
+            "src": "287:7:20"
+          }
+        ],
+        "contractDependencies": [
+          11099
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Claimable\n@dev Extension for the Ownable contract, where the ownership needs to be claimed.\nThis allows the new owner to accept the transfer.",
+        "fullyImplemented": true,
+        "id": 9908,
+        "linearizedBaseContracts": [
+          9908,
+          11099
+        ],
+        "name": "WithClaimableMigrationOwnership",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 9767,
+            "name": "_migrationOwner",
+            "nodeType": "VariableDeclaration",
+            "scope": 9908,
+            "src": "300:31:20",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 9766,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "300:7:20",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "constant": false,
+            "id": 9769,
+            "name": "pendingMigrationOwner",
+            "nodeType": "VariableDeclaration",
+            "scope": 9908,
+            "src": "337:29:20",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 9768,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "337:7:20",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 9775,
+            "name": "MigrationOwnershipTransferred",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 9774,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9771,
+                  "indexed": true,
+                  "name": "previousMigrationOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9775,
+                  "src": "409:38:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9770,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "409:7:20",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9773,
+                  "indexed": true,
+                  "name": "newMigrationOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9775,
+                  "src": "449:33:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9772,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "449:7:20",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "408:75:20"
+            },
+            "src": "373:111:20"
+          },
+          {
+            "body": {
+              "id": 9794,
+              "nodeType": "Block",
+              "src": "628:153:20",
+              "statements": [
+                {
+                  "assignments": [
+                    9779
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 9779,
+                      "name": "msgSender",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 9794,
+                      "src": "638:17:20",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+                        "id": 9778,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "638:7:20",
+                        "stateMutability": "nonpayable",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 9782,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 9780,
+                      "name": "_msgSender",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11087,
+                      "src": "658:10:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$__$returns$_t_address_payable_$",
+                        "typeString": "function () view returns (address payable)"
+                      }
+                    },
+                    "id": 9781,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "658:12:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "638:32:20"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 9785,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 9783,
+                      "name": "_migrationOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9767,
+                      "src": "680:15:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 9784,
+                      "name": "msgSender",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9779,
+                      "src": "698:9:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "680:27:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 9786,
+                  "nodeType": "ExpressionStatement",
+                  "src": "680:27:20"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "hexValue": "30",
+                            "id": 9789,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "760:1:20",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            }
+                          ],
+                          "id": 9788,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "752:7:20",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": "address"
+                        },
+                        "id": 9790,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "752:10:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 9791,
+                        "name": "msgSender",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 9779,
+                        "src": "764:9:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 9787,
+                      "name": "MigrationOwnershipTransferred",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9775,
+                      "src": "722:29:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address)"
+                      }
+                    },
+                    "id": 9792,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "722:52:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 9793,
+                  "nodeType": "EmitStatement",
+                  "src": "717:57:20"
+                }
+              ]
+            },
+            "documentation": "@dev Initializes the contract setting the deployer as the initial migrationMigrationOwner.",
+            "id": 9795,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9776,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "616:2:20"
+            },
+            "returnParameters": {
+              "id": 9777,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "628:0:20"
+            },
+            "scope": 9908,
+            "src": "604:177:20",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 9802,
+              "nodeType": "Block",
+              "src": "922:39:20",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 9800,
+                    "name": "_migrationOwner",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 9767,
+                    "src": "939:15:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 9799,
+                  "id": 9801,
+                  "nodeType": "Return",
+                  "src": "932:22:20"
+                }
+              ]
+            },
+            "documentation": "@dev Returns the address of the current migrationOwner.",
+            "id": 9803,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "migrationOwner",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9796,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "889:2:20"
+            },
+            "returnParameters": {
+              "id": 9799,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9798,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9803,
+                  "src": "913:7:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9797,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "913:7:20",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "912:9:20"
+            },
+            "scope": 9908,
+            "src": "866:95:20",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 9812,
+              "nodeType": "Block",
+              "src": "1088:124:20",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "id": 9806,
+                          "name": "isMigrationOwner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 9824,
+                          "src": "1106:16:20",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$__$returns$_t_bool_$",
+                            "typeString": "function () view returns (bool)"
+                          }
+                        },
+                        "id": 9807,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1106:18:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "57697468436c61696d61626c654d6967726174696f6e4f776e6572736869703a2063616c6c6572206973206e6f7420746865206d6967726174696f6e4f776e6572",
+                        "id": 9808,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1126:67:20",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_2ec910cfc8d4ee29fe4c009e2d032fce7da29b4841a6c3c54a26f33786c88a53",
+                          "typeString": "literal_string \"WithClaimableMigrationOwnership: caller is not the migrationOwner\""
+                        },
+                        "value": "WithClaimableMigrationOwnership: caller is not the migrationOwner"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_2ec910cfc8d4ee29fe4c009e2d032fce7da29b4841a6c3c54a26f33786c88a53",
+                          "typeString": "literal_string \"WithClaimableMigrationOwnership: caller is not the migrationOwner\""
+                        }
+                      ],
+                      "id": 9805,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        12171,
+                        12172
+                      ],
+                      "referencedDeclaration": 12172,
+                      "src": "1098:7:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 9809,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1098:96:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 9810,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1098:96:20"
+                },
+                {
+                  "id": 9811,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1204:1:20"
+                }
+              ]
+            },
+            "documentation": "@dev Throws if called by any account other than the migrationOwner.",
+            "id": 9813,
+            "name": "onlyMigrationOwner",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 9804,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1085:2:20"
+            },
+            "src": "1058:154:20",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 9823,
+              "nodeType": "Block",
+              "src": "1359:55:20",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    },
+                    "id": 9821,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "id": 9818,
+                        "name": "_msgSender",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11087,
+                        "src": "1376:10:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_view$__$returns$_t_address_payable_$",
+                          "typeString": "function () view returns (address payable)"
+                        }
+                      },
+                      "id": 9819,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1376:12:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 9820,
+                      "name": "_migrationOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9767,
+                      "src": "1392:15:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1376:31:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 9817,
+                  "id": 9822,
+                  "nodeType": "Return",
+                  "src": "1369:38:20"
+                }
+              ]
+            },
+            "documentation": "@dev Returns true if the caller is the current migrationOwner.",
+            "id": 9824,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isMigrationOwner",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9814,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1329:2:20"
+            },
+            "returnParameters": {
+              "id": 9817,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9816,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9824,
+                  "src": "1353:4:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 9815,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1353:4:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1352:6:20"
+            },
+            "scope": 9908,
+            "src": "1304:110:20",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 9842,
+              "nodeType": "Block",
+              "src": "1865:118:20",
+              "statements": [
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 9830,
+                        "name": "_migrationOwner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 9767,
+                        "src": "1910:15:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "hexValue": "30",
+                            "id": 9832,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1935:1:20",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            }
+                          ],
+                          "id": 9831,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "1927:7:20",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": "address"
+                        },
+                        "id": 9833,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1927:10:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 9829,
+                      "name": "MigrationOwnershipTransferred",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9775,
+                      "src": "1880:29:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address)"
+                      }
+                    },
+                    "id": 9834,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1880:58:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 9835,
+                  "nodeType": "EmitStatement",
+                  "src": "1875:63:20"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 9840,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 9836,
+                      "name": "_migrationOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9767,
+                      "src": "1948:15:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 9838,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1974:1:20",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          }
+                        ],
+                        "id": 9837,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "ElementaryTypeNameExpression",
+                        "src": "1966:7:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_address_$",
+                          "typeString": "type(address)"
+                        },
+                        "typeName": "address"
+                      },
+                      "id": 9839,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1966:10:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "1948:28:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 9841,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1948:28:20"
+                }
+              ]
+            },
+            "documentation": "@dev Leaves the contract without migrationOwner. It will not be possible to call\n`onlyOwner` functions anymore. Can only be called by the current migrationOwner.\n     * NOTE: Renouncing migrationOwnership will leave the contract without an migrationOwner,\nthereby removing any functionality that is only available to the migrationOwner.",
+            "id": 9843,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 9827,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 9826,
+                  "name": "onlyMigrationOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 9813,
+                  "src": "1846:18:20",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1846:18:20"
+              }
+            ],
+            "name": "renounceMigrationOwnership",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9825,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1836:2:20"
+            },
+            "returnParameters": {
+              "id": 9828,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1865:0:20"
+            },
+            "scope": 9908,
+            "src": "1801:182:20",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 9866,
+              "nodeType": "Block",
+              "src": "2166:240:20",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 9853,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 9849,
+                          "name": "newMigrationOwner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 9845,
+                          "src": "2184:17:20",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "30",
+                              "id": 9851,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "2213:1:20",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 9850,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "2205:7:20",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 9852,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "2205:10:20",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "src": "2184:31:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4d6967726174696f6e4f776e65723a206e6577206d6967726174696f6e4f776e657220697320746865207a65726f2061646472657373",
+                        "id": 9854,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2217:56:20",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_d2ac050f847f15fef98a8537511bb63a4fa22b17a1d508483eb5444f1bb8fe83",
+                          "typeString": "literal_string \"MigrationOwner: new migrationOwner is the zero address\""
+                        },
+                        "value": "MigrationOwner: new migrationOwner is the zero address"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_d2ac050f847f15fef98a8537511bb63a4fa22b17a1d508483eb5444f1bb8fe83",
+                          "typeString": "literal_string \"MigrationOwner: new migrationOwner is the zero address\""
+                        }
+                      ],
+                      "id": 9848,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        12171,
+                        12172
+                      ],
+                      "referencedDeclaration": 12172,
+                      "src": "2176:7:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 9855,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2176:98:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 9856,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2176:98:20"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 9858,
+                        "name": "_migrationOwner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 9767,
+                        "src": "2319:15:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 9859,
+                        "name": "newMigrationOwner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 9845,
+                        "src": "2336:17:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 9857,
+                      "name": "MigrationOwnershipTransferred",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9775,
+                      "src": "2289:29:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address)"
+                      }
+                    },
+                    "id": 9860,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2289:65:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 9861,
+                  "nodeType": "EmitStatement",
+                  "src": "2284:70:20"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 9864,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 9862,
+                      "name": "_migrationOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9767,
+                      "src": "2364:15:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 9863,
+                      "name": "newMigrationOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9845,
+                      "src": "2382:17:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "2364:35:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 9865,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2364:35:20"
+                }
+              ]
+            },
+            "documentation": "@dev Transfers migrationOwnership of the contract to a new account (`newOwner`).",
+            "id": 9867,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_transferMigrationOwnership",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9846,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9845,
+                  "name": "newMigrationOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9867,
+                  "src": "2130:25:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9844,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2130:7:20",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2129:27:20"
+            },
+            "returnParameters": {
+              "id": 9847,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2166:0:20"
+            },
+            "scope": 9908,
+            "src": "2093:313:20",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 9878,
+              "nodeType": "Block",
+              "src": "2547:116:20",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 9873,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 9870,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 12168,
+                            "src": "2565:3:20",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 9871,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "2565:10:20",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 9872,
+                          "name": "pendingMigrationOwner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 9769,
+                          "src": "2579:21:20",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "2565:35:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "43616c6c6572206973206e6f74207468652070656e64696e67206d6967726174696f6e4f776e6572",
+                        "id": 9874,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2602:42:20",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_70ed286d7c09b2586e3acf9e20ee86c78c259b2e7edff8f022a2d73652ba3b6f",
+                          "typeString": "literal_string \"Caller is not the pending migrationOwner\""
+                        },
+                        "value": "Caller is not the pending migrationOwner"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_70ed286d7c09b2586e3acf9e20ee86c78c259b2e7edff8f022a2d73652ba3b6f",
+                          "typeString": "literal_string \"Caller is not the pending migrationOwner\""
+                        }
+                      ],
+                      "id": 9869,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        12171,
+                        12172
+                      ],
+                      "referencedDeclaration": 12172,
+                      "src": "2557:7:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 9875,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2557:88:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 9876,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2557:88:20"
+                },
+                {
+                  "id": 9877,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "2655:1:20"
+                }
+              ]
+            },
+            "documentation": "@dev Modifier throws if called by any account other than the pendingOwner.",
+            "id": 9879,
+            "name": "onlyPendingMigrationOwner",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 9868,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2544:2:20"
+            },
+            "src": "2510:153:20",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 9890,
+              "nodeType": "Block",
+              "src": "2931:58:20",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 9888,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 9886,
+                      "name": "pendingMigrationOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9769,
+                      "src": "2941:21:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 9887,
+                      "name": "newMigrationOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9881,
+                      "src": "2965:17:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "2941:41:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 9889,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2941:41:20"
+                }
+              ]
+            },
+            "documentation": "@dev Allows the current migrationOwner to set the pendingOwner address.\n@param newMigrationOwner The address to transfer migrationOwnership to.",
+            "id": 9891,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 9884,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 9883,
+                  "name": "onlyMigrationOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 9813,
+                  "src": "2912:18:20",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "2912:18:20"
+              }
+            ],
+            "name": "transferMigrationOwnership",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9882,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9881,
+                  "name": "newMigrationOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9891,
+                  "src": "2878:25:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9880,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2878:7:20",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2877:27:20"
+            },
+            "returnParameters": {
+              "id": 9885,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2931:0:20"
+            },
+            "scope": 9908,
+            "src": "2842:147:20",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 9906,
+              "nodeType": "Block",
+              "src": "3159:111:20",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 9897,
+                        "name": "pendingMigrationOwner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 9769,
+                        "src": "3197:21:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 9896,
+                      "name": "_transferMigrationOwnership",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9867,
+                      "src": "3169:27:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 9898,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "3169:50:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 9899,
+                  "nodeType": "ExpressionStatement",
+                  "src": "3169:50:20"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 9904,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 9900,
+                      "name": "pendingMigrationOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9769,
+                      "src": "3229:21:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 9902,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "3261:1:20",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          }
+                        ],
+                        "id": 9901,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "ElementaryTypeNameExpression",
+                        "src": "3253:7:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_address_$",
+                          "typeString": "type(address)"
+                        },
+                        "typeName": "address"
+                      },
+                      "id": 9903,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "3253:10:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "3229:34:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 9905,
+                  "nodeType": "ExpressionStatement",
+                  "src": "3229:34:20"
+                }
+              ]
+            },
+            "documentation": "@dev Allows the pendingMigrationOwner address to finalize the transfer.",
+            "id": 9907,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 9894,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 9893,
+                  "name": "onlyPendingMigrationOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 9879,
+                  "src": "3133:25:20",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "3133:25:20"
+              }
+            ],
+            "name": "claimMigrationOwnership",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9892,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3121:2:20"
+            },
+            "returnParameters": {
+              "id": 9895,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3159:0:20"
+            },
+            "scope": 9908,
+            "src": "3089:181:20",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 9909,
+        "src": "243:3029:20"
+      }
+    ],
+    "src": "0:3273:20"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/WithClaimableMigrationOwnership.sol",
+    "exportedSymbols": {
+      "WithClaimableMigrationOwnership": [
+        9908
+      ]
+    },
+    "id": 9909,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 9762,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:20"
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts/GSN/Context.sol",
+        "file": "@openzeppelin/contracts/GSN/Context.sol",
+        "id": 9763,
+        "nodeType": "ImportDirective",
+        "scope": 9909,
+        "sourceUnit": 11100,
+        "src": "26:49:20",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 9764,
+              "name": "Context",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 11099,
+              "src": "287:7:20",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Context_$11099",
+                "typeString": "contract Context"
+              }
+            },
+            "id": 9765,
+            "nodeType": "InheritanceSpecifier",
+            "src": "287:7:20"
+          }
+        ],
+        "contractDependencies": [
+          11099
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Claimable\n@dev Extension for the Ownable contract, where the ownership needs to be claimed.\nThis allows the new owner to accept the transfer.",
+        "fullyImplemented": true,
+        "id": 9908,
+        "linearizedBaseContracts": [
+          9908,
+          11099
+        ],
+        "name": "WithClaimableMigrationOwnership",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 9767,
+            "name": "_migrationOwner",
+            "nodeType": "VariableDeclaration",
+            "scope": 9908,
+            "src": "300:31:20",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 9766,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "300:7:20",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "constant": false,
+            "id": 9769,
+            "name": "pendingMigrationOwner",
+            "nodeType": "VariableDeclaration",
+            "scope": 9908,
+            "src": "337:29:20",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 9768,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "337:7:20",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 9775,
+            "name": "MigrationOwnershipTransferred",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 9774,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9771,
+                  "indexed": true,
+                  "name": "previousMigrationOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9775,
+                  "src": "409:38:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9770,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "409:7:20",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9773,
+                  "indexed": true,
+                  "name": "newMigrationOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9775,
+                  "src": "449:33:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9772,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "449:7:20",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "408:75:20"
+            },
+            "src": "373:111:20"
+          },
+          {
+            "body": {
+              "id": 9794,
+              "nodeType": "Block",
+              "src": "628:153:20",
+              "statements": [
+                {
+                  "assignments": [
+                    9779
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 9779,
+                      "name": "msgSender",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 9794,
+                      "src": "638:17:20",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+                        "id": 9778,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "638:7:20",
+                        "stateMutability": "nonpayable",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 9782,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 9780,
+                      "name": "_msgSender",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11087,
+                      "src": "658:10:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$__$returns$_t_address_payable_$",
+                        "typeString": "function () view returns (address payable)"
+                      }
+                    },
+                    "id": 9781,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "658:12:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "638:32:20"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 9785,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 9783,
+                      "name": "_migrationOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9767,
+                      "src": "680:15:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 9784,
+                      "name": "msgSender",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9779,
+                      "src": "698:9:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "680:27:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 9786,
+                  "nodeType": "ExpressionStatement",
+                  "src": "680:27:20"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "hexValue": "30",
+                            "id": 9789,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "760:1:20",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            }
+                          ],
+                          "id": 9788,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "752:7:20",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": "address"
+                        },
+                        "id": 9790,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "752:10:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 9791,
+                        "name": "msgSender",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 9779,
+                        "src": "764:9:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 9787,
+                      "name": "MigrationOwnershipTransferred",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9775,
+                      "src": "722:29:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address)"
+                      }
+                    },
+                    "id": 9792,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "722:52:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 9793,
+                  "nodeType": "EmitStatement",
+                  "src": "717:57:20"
+                }
+              ]
+            },
+            "documentation": "@dev Initializes the contract setting the deployer as the initial migrationMigrationOwner.",
+            "id": 9795,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9776,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "616:2:20"
+            },
+            "returnParameters": {
+              "id": 9777,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "628:0:20"
+            },
+            "scope": 9908,
+            "src": "604:177:20",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 9802,
+              "nodeType": "Block",
+              "src": "922:39:20",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 9800,
+                    "name": "_migrationOwner",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 9767,
+                    "src": "939:15:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 9799,
+                  "id": 9801,
+                  "nodeType": "Return",
+                  "src": "932:22:20"
+                }
+              ]
+            },
+            "documentation": "@dev Returns the address of the current migrationOwner.",
+            "id": 9803,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "migrationOwner",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9796,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "889:2:20"
+            },
+            "returnParameters": {
+              "id": 9799,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9798,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9803,
+                  "src": "913:7:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9797,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "913:7:20",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "912:9:20"
+            },
+            "scope": 9908,
+            "src": "866:95:20",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 9812,
+              "nodeType": "Block",
+              "src": "1088:124:20",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "id": 9806,
+                          "name": "isMigrationOwner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 9824,
+                          "src": "1106:16:20",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$__$returns$_t_bool_$",
+                            "typeString": "function () view returns (bool)"
+                          }
+                        },
+                        "id": 9807,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1106:18:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "57697468436c61696d61626c654d6967726174696f6e4f776e6572736869703a2063616c6c6572206973206e6f7420746865206d6967726174696f6e4f776e6572",
+                        "id": 9808,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1126:67:20",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_2ec910cfc8d4ee29fe4c009e2d032fce7da29b4841a6c3c54a26f33786c88a53",
+                          "typeString": "literal_string \"WithClaimableMigrationOwnership: caller is not the migrationOwner\""
+                        },
+                        "value": "WithClaimableMigrationOwnership: caller is not the migrationOwner"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_2ec910cfc8d4ee29fe4c009e2d032fce7da29b4841a6c3c54a26f33786c88a53",
+                          "typeString": "literal_string \"WithClaimableMigrationOwnership: caller is not the migrationOwner\""
+                        }
+                      ],
+                      "id": 9805,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        12171,
+                        12172
+                      ],
+                      "referencedDeclaration": 12172,
+                      "src": "1098:7:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 9809,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1098:96:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 9810,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1098:96:20"
+                },
+                {
+                  "id": 9811,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1204:1:20"
+                }
+              ]
+            },
+            "documentation": "@dev Throws if called by any account other than the migrationOwner.",
+            "id": 9813,
+            "name": "onlyMigrationOwner",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 9804,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1085:2:20"
+            },
+            "src": "1058:154:20",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 9823,
+              "nodeType": "Block",
+              "src": "1359:55:20",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    },
+                    "id": 9821,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "id": 9818,
+                        "name": "_msgSender",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11087,
+                        "src": "1376:10:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_view$__$returns$_t_address_payable_$",
+                          "typeString": "function () view returns (address payable)"
+                        }
+                      },
+                      "id": 9819,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1376:12:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 9820,
+                      "name": "_migrationOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9767,
+                      "src": "1392:15:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1376:31:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 9817,
+                  "id": 9822,
+                  "nodeType": "Return",
+                  "src": "1369:38:20"
+                }
+              ]
+            },
+            "documentation": "@dev Returns true if the caller is the current migrationOwner.",
+            "id": 9824,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isMigrationOwner",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9814,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1329:2:20"
+            },
+            "returnParameters": {
+              "id": 9817,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9816,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9824,
+                  "src": "1353:4:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 9815,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1353:4:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1352:6:20"
+            },
+            "scope": 9908,
+            "src": "1304:110:20",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 9842,
+              "nodeType": "Block",
+              "src": "1865:118:20",
+              "statements": [
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 9830,
+                        "name": "_migrationOwner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 9767,
+                        "src": "1910:15:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "hexValue": "30",
+                            "id": 9832,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1935:1:20",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            }
+                          ],
+                          "id": 9831,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "1927:7:20",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": "address"
+                        },
+                        "id": 9833,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1927:10:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 9829,
+                      "name": "MigrationOwnershipTransferred",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9775,
+                      "src": "1880:29:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address)"
+                      }
+                    },
+                    "id": 9834,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1880:58:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 9835,
+                  "nodeType": "EmitStatement",
+                  "src": "1875:63:20"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 9840,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 9836,
+                      "name": "_migrationOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9767,
+                      "src": "1948:15:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 9838,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1974:1:20",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          }
+                        ],
+                        "id": 9837,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "ElementaryTypeNameExpression",
+                        "src": "1966:7:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_address_$",
+                          "typeString": "type(address)"
+                        },
+                        "typeName": "address"
+                      },
+                      "id": 9839,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1966:10:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "1948:28:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 9841,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1948:28:20"
+                }
+              ]
+            },
+            "documentation": "@dev Leaves the contract without migrationOwner. It will not be possible to call\n`onlyOwner` functions anymore. Can only be called by the current migrationOwner.\n     * NOTE: Renouncing migrationOwnership will leave the contract without an migrationOwner,\nthereby removing any functionality that is only available to the migrationOwner.",
+            "id": 9843,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 9827,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 9826,
+                  "name": "onlyMigrationOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 9813,
+                  "src": "1846:18:20",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1846:18:20"
+              }
+            ],
+            "name": "renounceMigrationOwnership",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9825,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1836:2:20"
+            },
+            "returnParameters": {
+              "id": 9828,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1865:0:20"
+            },
+            "scope": 9908,
+            "src": "1801:182:20",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 9866,
+              "nodeType": "Block",
+              "src": "2166:240:20",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 9853,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 9849,
+                          "name": "newMigrationOwner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 9845,
+                          "src": "2184:17:20",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "30",
+                              "id": 9851,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "2213:1:20",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 9850,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "2205:7:20",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 9852,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "2205:10:20",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "src": "2184:31:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4d6967726174696f6e4f776e65723a206e6577206d6967726174696f6e4f776e657220697320746865207a65726f2061646472657373",
+                        "id": 9854,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2217:56:20",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_d2ac050f847f15fef98a8537511bb63a4fa22b17a1d508483eb5444f1bb8fe83",
+                          "typeString": "literal_string \"MigrationOwner: new migrationOwner is the zero address\""
+                        },
+                        "value": "MigrationOwner: new migrationOwner is the zero address"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_d2ac050f847f15fef98a8537511bb63a4fa22b17a1d508483eb5444f1bb8fe83",
+                          "typeString": "literal_string \"MigrationOwner: new migrationOwner is the zero address\""
+                        }
+                      ],
+                      "id": 9848,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        12171,
+                        12172
+                      ],
+                      "referencedDeclaration": 12172,
+                      "src": "2176:7:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 9855,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2176:98:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 9856,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2176:98:20"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 9858,
+                        "name": "_migrationOwner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 9767,
+                        "src": "2319:15:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 9859,
+                        "name": "newMigrationOwner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 9845,
+                        "src": "2336:17:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 9857,
+                      "name": "MigrationOwnershipTransferred",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9775,
+                      "src": "2289:29:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address)"
+                      }
+                    },
+                    "id": 9860,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2289:65:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 9861,
+                  "nodeType": "EmitStatement",
+                  "src": "2284:70:20"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 9864,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 9862,
+                      "name": "_migrationOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9767,
+                      "src": "2364:15:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 9863,
+                      "name": "newMigrationOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9845,
+                      "src": "2382:17:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "2364:35:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 9865,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2364:35:20"
+                }
+              ]
+            },
+            "documentation": "@dev Transfers migrationOwnership of the contract to a new account (`newOwner`).",
+            "id": 9867,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_transferMigrationOwnership",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9846,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9845,
+                  "name": "newMigrationOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9867,
+                  "src": "2130:25:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9844,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2130:7:20",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2129:27:20"
+            },
+            "returnParameters": {
+              "id": 9847,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2166:0:20"
+            },
+            "scope": 9908,
+            "src": "2093:313:20",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 9878,
+              "nodeType": "Block",
+              "src": "2547:116:20",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 9873,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 9870,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 12168,
+                            "src": "2565:3:20",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 9871,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "2565:10:20",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 9872,
+                          "name": "pendingMigrationOwner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 9769,
+                          "src": "2579:21:20",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "2565:35:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "43616c6c6572206973206e6f74207468652070656e64696e67206d6967726174696f6e4f776e6572",
+                        "id": 9874,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2602:42:20",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_70ed286d7c09b2586e3acf9e20ee86c78c259b2e7edff8f022a2d73652ba3b6f",
+                          "typeString": "literal_string \"Caller is not the pending migrationOwner\""
+                        },
+                        "value": "Caller is not the pending migrationOwner"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_70ed286d7c09b2586e3acf9e20ee86c78c259b2e7edff8f022a2d73652ba3b6f",
+                          "typeString": "literal_string \"Caller is not the pending migrationOwner\""
+                        }
+                      ],
+                      "id": 9869,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        12171,
+                        12172
+                      ],
+                      "referencedDeclaration": 12172,
+                      "src": "2557:7:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 9875,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2557:88:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 9876,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2557:88:20"
+                },
+                {
+                  "id": 9877,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "2655:1:20"
+                }
+              ]
+            },
+            "documentation": "@dev Modifier throws if called by any account other than the pendingOwner.",
+            "id": 9879,
+            "name": "onlyPendingMigrationOwner",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 9868,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2544:2:20"
+            },
+            "src": "2510:153:20",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 9890,
+              "nodeType": "Block",
+              "src": "2931:58:20",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 9888,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 9886,
+                      "name": "pendingMigrationOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9769,
+                      "src": "2941:21:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 9887,
+                      "name": "newMigrationOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9881,
+                      "src": "2965:17:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "2941:41:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 9889,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2941:41:20"
+                }
+              ]
+            },
+            "documentation": "@dev Allows the current migrationOwner to set the pendingOwner address.\n@param newMigrationOwner The address to transfer migrationOwnership to.",
+            "id": 9891,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 9884,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 9883,
+                  "name": "onlyMigrationOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 9813,
+                  "src": "2912:18:20",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "2912:18:20"
+              }
+            ],
+            "name": "transferMigrationOwnership",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9882,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9881,
+                  "name": "newMigrationOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9891,
+                  "src": "2878:25:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9880,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2878:7:20",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2877:27:20"
+            },
+            "returnParameters": {
+              "id": 9885,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2931:0:20"
+            },
+            "scope": 9908,
+            "src": "2842:147:20",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 9906,
+              "nodeType": "Block",
+              "src": "3159:111:20",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 9897,
+                        "name": "pendingMigrationOwner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 9769,
+                        "src": "3197:21:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 9896,
+                      "name": "_transferMigrationOwnership",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9867,
+                      "src": "3169:27:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 9898,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "3169:50:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 9899,
+                  "nodeType": "ExpressionStatement",
+                  "src": "3169:50:20"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 9904,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 9900,
+                      "name": "pendingMigrationOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9769,
+                      "src": "3229:21:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 9902,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "3261:1:20",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          }
+                        ],
+                        "id": 9901,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "ElementaryTypeNameExpression",
+                        "src": "3253:7:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_address_$",
+                          "typeString": "type(address)"
+                        },
+                        "typeName": "address"
+                      },
+                      "id": 9903,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "3253:10:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "3229:34:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 9905,
+                  "nodeType": "ExpressionStatement",
+                  "src": "3229:34:20"
+                }
+              ]
+            },
+            "documentation": "@dev Allows the pendingMigrationOwner address to finalize the transfer.",
+            "id": 9907,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 9894,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 9893,
+                  "name": "onlyPendingMigrationOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 9879,
+                  "src": "3133:25:20",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "3133:25:20"
+              }
+            ],
+            "name": "claimMigrationOwnership",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9892,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3121:2:20"
+            },
+            "returnParameters": {
+              "id": 9895,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3159:0:20"
+            },
+            "scope": 9908,
+            "src": "3089:181:20",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 9909,
+        "src": "243:3029:20"
+      }
+    ],
+    "src": "0:3273:20"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.23",
+  "updatedAt": "2020-07-27T07:33:26.942Z",
+  "devdoc": {
+    "details": "Extension for the Ownable contract, where the ownership needs to be claimed. This allows the new owner to accept the transfer.",
+    "methods": {
+      "claimMigrationOwnership()": {
+        "details": "Allows the pendingMigrationOwner address to finalize the transfer."
+      },
+      "constructor": {
+        "details": "Initializes the contract setting the deployer as the initial migrationMigrationOwner."
+      },
+      "isMigrationOwner()": {
+        "details": "Returns true if the caller is the current migrationOwner."
+      },
+      "migrationOwner()": {
+        "details": "Returns the address of the current migrationOwner."
+      },
+      "renounceMigrationOwnership()": {
+        "details": "Leaves the contract without migrationOwner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current migrationOwner.     * NOTE: Renouncing migrationOwnership will leave the contract without an migrationOwner, thereby removing any functionality that is only available to the migrationOwner."
+      },
+      "transferMigrationOwnership(address)": {
+        "details": "Allows the current migrationOwner to set the pendingOwner address.",
+        "params": {
+          "newMigrationOwner": "The address to transfer migrationOwnership to."
+        }
+      }
+    },
+    "title": "Claimable"
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

@@ -1,0 +1,791 @@
+{
+  "contractName": "ICertification",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "guardian",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "isCertified",
+          "type": "bool"
+        }
+      ],
+      "name": "GuardianCertificationUpdate",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        }
+      ],
+      "name": "isGuardianCertified",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "isCertified",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "isCertified",
+          "type": "bool"
+        }
+      ],
+      "name": "setGuardianCertification",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "contract IContractRegistry",
+          "name": "_contractRegistry",
+          "type": "address"
+        }
+      ],
+      "name": "setContractRegistry",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"guardian\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isCertified\",\"type\":\"bool\"}],\"name\":\"GuardianCertificationUpdate\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"}],\"name\":\"isGuardianCertified\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"isCertified\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"contract IContractRegistry\",\"name\":\"_contractRegistry\",\"type\":\"address\"}],\"name\":\"setContractRegistry\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"isCertified\",\"type\":\"bool\"}],\"name\":\"setGuardianCertification\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"isGuardianCertified(address)\":{\"details\":\"Called by a guardian as part of the automatic vote unready flow Used by the Election contract\"},\"setContractRegistry(address)\":{\"details\":\"Updates the address calldata of the contract registry\"},\"setGuardianCertification(address,bool)\":{\"details\":\"Called by a guardian as part of the automatic vote unready flow Used by the Election contract\"}},\"title\":\"Elections contract interface\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/ICertification.sol\":\"ICertification\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/ICertification.sol\":{\"keccak256\":\"0xf24287f819ef01e923fa0bee9ce0a31bc15ee328eb2d60e3adc2d4c7d8fbad82\",\"urls\":[\"bzz-raw://ceb02dc614f3d09ef064140a68e664a73062579061cd09cfb5b69a5a0b05c747\",\"dweb:/ipfs/QmYy8jzJEvy1oasZMZFLaPX7XEex73bAU3RBWstoHi9L5e\"]},\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IContractRegistry.sol\":{\"keccak256\":\"0x6af72993f6951883689d3e90e92861e4de1779810f9e0ace7212f12af251255c\",\"urls\":[\"bzz-raw://772374609c24adfc2e1e6ca8157e4d9b9b730636ddef7c91353492f0b15738c6\",\"dweb:/ipfs/QmTAZvGKEy4CaA8jQG4LkXDiBeL5CbyWMg6ypTVXCm1ipM\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity 0.5.16;\n\nimport \"./IContractRegistry.sol\";\n\n\n/// @title Elections contract interface\ninterface ICertification /* is Ownable */ {\n\tevent GuardianCertificationUpdate(address guardian, bool isCertified);\n\n\t/*\n     * External methods\n     */\n\n    /// @dev Called by a guardian as part of the automatic vote unready flow\n    /// Used by the Election contract\n\tfunction isGuardianCertified(address addr) external view returns (bool isCertified);\n\n    /// @dev Called by a guardian as part of the automatic vote unready flow\n    /// Used by the Election contract\n\tfunction setGuardianCertification(address addr, bool isCertified) external /* Owner only */ ;\n\n\t/*\n\t * Governance\n\t */\n\n    /// @dev Updates the address calldata of the contract registry\n\tfunction setContractRegistry(IContractRegistry _contractRegistry) external /* onlyMigrationOwner */;\n\n}\n",
+  "sourcePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/ICertification.sol",
+  "ast": {
+    "absolutePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/ICertification.sol",
+    "exportedSymbols": {
+      "ICertification": [
+        10300
+      ]
+    },
+    "id": 10301,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 10273,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:23"
+      },
+      {
+        "absolutePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IContractRegistry.sol",
+        "file": "./IContractRegistry.sol",
+        "id": 10274,
+        "nodeType": "ImportDirective",
+        "scope": 10301,
+        "sourceUnit": 10461,
+        "src": "25:33:23",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title Elections contract interface",
+        "fullyImplemented": false,
+        "id": 10300,
+        "linearizedBaseContracts": [
+          10300
+        ],
+        "name": "ICertification",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10280,
+            "name": "GuardianCertificationUpdate",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10279,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10276,
+                  "indexed": false,
+                  "name": "guardian",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10280,
+                  "src": "180:16:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10275,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "180:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10278,
+                  "indexed": false,
+                  "name": "isCertified",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10280,
+                  "src": "198:16:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 10277,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "198:4:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "179:36:23"
+            },
+            "src": "146:70:23"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by a guardian as part of the automatic vote unready flow\n Used by the Election contract",
+            "id": 10287,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isGuardianCertified",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10283,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10282,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10287,
+                  "src": "400:12:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10281,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "400:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "399:14:23"
+            },
+            "returnParameters": {
+              "id": 10286,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10285,
+                  "name": "isCertified",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10287,
+                  "src": "437:16:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 10284,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "437:4:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "436:18:23"
+            },
+            "scope": 10300,
+            "src": "371:84:23",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by a guardian as part of the automatic vote unready flow\n Used by the Election contract",
+            "id": 10294,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setGuardianCertification",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10292,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10289,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10294,
+                  "src": "607:12:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10288,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "607:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10291,
+                  "name": "isCertified",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10294,
+                  "src": "621:16:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 10290,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "621:4:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "606:32:23"
+            },
+            "returnParameters": {
+              "id": 10293,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "665:0:23"
+            },
+            "scope": 10300,
+            "src": "573:93:23",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Updates the address calldata of the contract registry",
+            "id": 10299,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setContractRegistry",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10297,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10296,
+                  "name": "_contractRegistry",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10299,
+                  "src": "790:35:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IContractRegistry_$10460",
+                    "typeString": "contract IContractRegistry"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 10295,
+                    "name": "IContractRegistry",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 10460,
+                    "src": "790:17:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IContractRegistry_$10460",
+                      "typeString": "contract IContractRegistry"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "789:37:23"
+            },
+            "returnParameters": {
+              "id": 10298,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "860:0:23"
+            },
+            "scope": 10300,
+            "src": "761:100:23",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 10301,
+        "src": "101:763:23"
+      }
+    ],
+    "src": "0:865:23"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/ICertification.sol",
+    "exportedSymbols": {
+      "ICertification": [
+        10300
+      ]
+    },
+    "id": 10301,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 10273,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:23"
+      },
+      {
+        "absolutePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IContractRegistry.sol",
+        "file": "./IContractRegistry.sol",
+        "id": 10274,
+        "nodeType": "ImportDirective",
+        "scope": 10301,
+        "sourceUnit": 10461,
+        "src": "25:33:23",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title Elections contract interface",
+        "fullyImplemented": false,
+        "id": 10300,
+        "linearizedBaseContracts": [
+          10300
+        ],
+        "name": "ICertification",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10280,
+            "name": "GuardianCertificationUpdate",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10279,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10276,
+                  "indexed": false,
+                  "name": "guardian",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10280,
+                  "src": "180:16:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10275,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "180:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10278,
+                  "indexed": false,
+                  "name": "isCertified",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10280,
+                  "src": "198:16:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 10277,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "198:4:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "179:36:23"
+            },
+            "src": "146:70:23"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by a guardian as part of the automatic vote unready flow\n Used by the Election contract",
+            "id": 10287,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isGuardianCertified",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10283,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10282,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10287,
+                  "src": "400:12:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10281,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "400:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "399:14:23"
+            },
+            "returnParameters": {
+              "id": 10286,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10285,
+                  "name": "isCertified",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10287,
+                  "src": "437:16:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 10284,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "437:4:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "436:18:23"
+            },
+            "scope": 10300,
+            "src": "371:84:23",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by a guardian as part of the automatic vote unready flow\n Used by the Election contract",
+            "id": 10294,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setGuardianCertification",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10292,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10289,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10294,
+                  "src": "607:12:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10288,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "607:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10291,
+                  "name": "isCertified",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10294,
+                  "src": "621:16:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 10290,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "621:4:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "606:32:23"
+            },
+            "returnParameters": {
+              "id": 10293,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "665:0:23"
+            },
+            "scope": 10300,
+            "src": "573:93:23",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Updates the address calldata of the contract registry",
+            "id": 10299,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setContractRegistry",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10297,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10296,
+                  "name": "_contractRegistry",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10299,
+                  "src": "790:35:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IContractRegistry_$10460",
+                    "typeString": "contract IContractRegistry"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 10295,
+                    "name": "IContractRegistry",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 10460,
+                    "src": "790:17:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IContractRegistry_$10460",
+                      "typeString": "contract IContractRegistry"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "789:37:23"
+            },
+            "returnParameters": {
+              "id": 10298,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "860:0:23"
+            },
+            "scope": 10300,
+            "src": "761:100:23",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 10301,
+        "src": "101:763:23"
+      }
+    ],
+    "src": "0:865:23"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.23",
+  "updatedAt": "2020-07-27T07:33:26.946Z",
+  "devdoc": {
+    "methods": {
+      "isGuardianCertified(address)": {
+        "details": "Called by a guardian as part of the automatic vote unready flow Used by the Election contract"
+      },
+      "setContractRegistry(address)": {
+        "details": "Updates the address calldata of the contract registry"
+      },
+      "setGuardianCertification(address,bool)": {
+        "details": "Called by a guardian as part of the automatic vote unready flow Used by the Election contract"
+      }
+    },
+    "title": "Elections contract interface"
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

@@ -1,0 +1,1 @@
+web: sh -c 'cd ./backend ª&& node --require ts-node/register main.ts'

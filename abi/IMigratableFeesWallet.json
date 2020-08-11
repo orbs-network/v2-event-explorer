@@ -1,0 +1,290 @@
+{
+  "contractName": "IMigratableFeesWallet",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "bucketStartTime",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "acceptBucketMigration",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"bucketStartTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"acceptBucketMigration\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"acceptBucketMigration(uint256,uint256)\":{\"details\":\"receives a bucket start time and an amount\"}},\"title\":\"An interface for Fee wallets that support bucket migration.\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IMigratableFeesWallet.sol\":\"IMigratableFeesWallet\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IMigratableFeesWallet.sol\":{\"keccak256\":\"0xb527542464ac10958d9b3f354943d756c23266012e3687206496bb73e34c26ab\",\"urls\":[\"bzz-raw://5b1dfc99d4bdba6fa64e0fed9fafd3196e5da05dc1d5ffdd0ddb8e1bfde507bb\",\"dweb:/ipfs/QmPkvCqcnwFALiqdckuBAYMTt6oyad5To4ov4scTp8mwcz\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity 0.5.16;\n\n/// @title An interface for Fee wallets that support bucket migration.\ninterface IMigratableFeesWallet {\n    /// @dev receives a bucket start time and an amount\n    function acceptBucketMigration(uint256 bucketStartTime, uint256 amount) external;\n}\n",
+  "sourcePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IMigratableFeesWallet.sol",
+  "ast": {
+    "absolutePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IMigratableFeesWallet.sol",
+    "exportedSymbols": {
+      "IMigratableFeesWallet": [
+        10914
+      ]
+    },
+    "id": 10915,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 10906,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:32"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title An interface for Fee wallets that support bucket migration.",
+        "fullyImplemented": false,
+        "id": 10914,
+        "linearizedBaseContracts": [
+          10914
+        ],
+        "name": "IMigratableFeesWallet",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@dev receives a bucket start time and an amount",
+            "id": 10913,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "acceptBucketMigration",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10911,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10908,
+                  "name": "bucketStartTime",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10913,
+                  "src": "221:23:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10907,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "221:7:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10910,
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10913,
+                  "src": "246:14:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10909,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "246:7:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "220:41:32"
+            },
+            "returnParameters": {
+              "id": 10912,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "270:0:32"
+            },
+            "scope": 10914,
+            "src": "190:81:32",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 10915,
+        "src": "96:177:32"
+      }
+    ],
+    "src": "0:274:32"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IMigratableFeesWallet.sol",
+    "exportedSymbols": {
+      "IMigratableFeesWallet": [
+        10914
+      ]
+    },
+    "id": 10915,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 10906,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:32"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title An interface for Fee wallets that support bucket migration.",
+        "fullyImplemented": false,
+        "id": 10914,
+        "linearizedBaseContracts": [
+          10914
+        ],
+        "name": "IMigratableFeesWallet",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@dev receives a bucket start time and an amount",
+            "id": 10913,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "acceptBucketMigration",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10911,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10908,
+                  "name": "bucketStartTime",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10913,
+                  "src": "221:23:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10907,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "221:7:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10910,
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10913,
+                  "src": "246:14:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10909,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "246:7:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "220:41:32"
+            },
+            "returnParameters": {
+              "id": 10912,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "270:0:32"
+            },
+            "scope": 10914,
+            "src": "190:81:32",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 10915,
+        "src": "96:177:32"
+      }
+    ],
+    "src": "0:274:32"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.23",
+  "updatedAt": "2020-08-03T17:47:01.824Z",
+  "devdoc": {
+    "methods": {
+      "acceptBucketMigration(uint256,uint256)": {
+        "details": "receives a bucket start time and an amount"
+      }
+    },
+    "title": "An interface for Fee wallets that support bucket migration."
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

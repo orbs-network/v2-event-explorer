@@ -1,0 +1,3386 @@
+{
+  "contractName": "IElections",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "readyToSync",
+          "type": "bool"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "readyForCommittee",
+          "type": "bool"
+        }
+      ],
+      "name": "GuardianStatusUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "guardian",
+          "type": "address"
+        }
+      ],
+      "name": "GuardianVotedIn",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "guardian",
+          "type": "address"
+        }
+      ],
+      "name": "GuardianVotedOut",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "guardian",
+          "type": "address"
+        }
+      ],
+      "name": "GuardianVotedUnready",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "newValue",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "oldValue",
+          "type": "uint32"
+        }
+      ],
+      "name": "MinSelfStakePercentMilleChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "selfStake",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "delegated_stake",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "effective_stake",
+          "type": "uint256"
+        }
+      ],
+      "name": "StakeChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "voter",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address[]",
+          "name": "subjects",
+          "type": "address[]"
+        }
+      ],
+      "name": "VoteOutCasted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "newValue",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "oldValue",
+          "type": "uint32"
+        }
+      ],
+      "name": "VoteOutLockTimeoutSecondsChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "newValue",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "oldValue",
+          "type": "uint8"
+        }
+      ],
+      "name": "VoteOutPercentageThresholdChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "voter",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "subject",
+          "type": "address"
+        }
+      ],
+      "name": "VoteUnreadyCasted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "newValue",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "oldValue",
+          "type": "uint8"
+        }
+      ],
+      "name": "VoteUnreadyPercentageThresholdChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "newValue",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "oldValue",
+          "type": "uint32"
+        }
+      ],
+      "name": "VoteUnreadyTimeoutSecondsChanged",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "subject_addr",
+          "type": "address"
+        }
+      ],
+      "name": "voteUnready",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "subject_addrs",
+          "type": "address[]"
+        }
+      ],
+      "name": "voteOut",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "readyForSync",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "readyForCommittee",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "selfStake",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "total_delegated",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "delta_total_delegated",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "sign_total_delegated",
+          "type": "bool"
+        }
+      ],
+      "name": "delegatedStakeChange",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        }
+      ],
+      "name": "guardianRegistered",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        }
+      ],
+      "name": "guardianUnregistered",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "isCertified",
+          "type": "bool"
+        }
+      ],
+      "name": "guardianCertificationChanged",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "contract IContractRegistry",
+          "name": "_contractRegistry",
+          "type": "address"
+        }
+      ],
+      "name": "setContractRegistry",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"readyToSync\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"readyForCommittee\",\"type\":\"bool\"}],\"name\":\"GuardianStatusUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"guardian\",\"type\":\"address\"}],\"name\":\"GuardianVotedIn\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"guardian\",\"type\":\"address\"}],\"name\":\"GuardianVotedOut\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"guardian\",\"type\":\"address\"}],\"name\":\"GuardianVotedUnready\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint32\",\"name\":\"newValue\",\"type\":\"uint32\"},{\"indexed\":false,\"internalType\":\"uint32\",\"name\":\"oldValue\",\"type\":\"uint32\"}],\"name\":\"MinSelfStakePercentMilleChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"selfStake\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"delegated_stake\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"effective_stake\",\"type\":\"uint256\"}],\"name\":\"StakeChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"voter\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"subjects\",\"type\":\"address[]\"}],\"name\":\"VoteOutCasted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint32\",\"name\":\"newValue\",\"type\":\"uint32\"},{\"indexed\":false,\"internalType\":\"uint32\",\"name\":\"oldValue\",\"type\":\"uint32\"}],\"name\":\"VoteOutLockTimeoutSecondsChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"newValue\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"oldValue\",\"type\":\"uint8\"}],\"name\":\"VoteOutPercentageThresholdChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"voter\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"subject\",\"type\":\"address\"}],\"name\":\"VoteUnreadyCasted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"newValue\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"oldValue\",\"type\":\"uint8\"}],\"name\":\"VoteUnreadyPercentageThresholdChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint32\",\"name\":\"newValue\",\"type\":\"uint32\"},{\"indexed\":false,\"internalType\":\"uint32\",\"name\":\"oldValue\",\"type\":\"uint32\"}],\"name\":\"VoteUnreadyTimeoutSecondsChanged\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"selfStake\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"total_delegated\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"delta_total_delegated\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"sign_total_delegated\",\"type\":\"bool\"}],\"name\":\"delegatedStakeChange\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"isCertified\",\"type\":\"bool\"}],\"name\":\"guardianCertificationChanged\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"}],\"name\":\"guardianRegistered\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"}],\"name\":\"guardianUnregistered\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"readyForCommittee\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"readyForSync\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"contract IContractRegistry\",\"name\":\"_contractRegistry\",\"type\":\"address\"}],\"name\":\"setContractRegistry\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"subject_addrs\",\"type\":\"address[]\"}],\"name\":\"voteOut\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"subject_addr\",\"type\":\"address\"}],\"name\":\"voteUnready\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"delegatedStakeChange(address,uint256,uint256,uint256,bool)\":{\"details\":\"Called by: delegation contract Notifies a delegated stake change event total_delegated_stake = 0 if addr delegates to another guardian\"},\"guardianCertificationChanged(address,bool)\":{\"details\":\"Called by: guardian registration contract Notifies on a guardian certification change\"},\"guardianRegistered(address)\":{\"details\":\"Called by: guardian registration contract Notifies a new guardian was registered\"},\"guardianUnregistered(address)\":{\"details\":\"Called by: guardian registration contract Notifies a new guardian was unregistered\"},\"readyForCommittee()\":{\"details\":\"Called by a guardian when ready to join the committee, typically after syncing is complete or after being voted unready\"},\"readyForSync()\":{\"details\":\"Called by a guardian when ready to join the committee, typically after syncing is complete or after being voted unready\"},\"setContractRegistry(address)\":{\"details\":\"Updates the address calldata of the contract registry\"},\"voteOut(address[])\":{\"details\":\"Called by a guardian as part of the vote-out flow\"},\"voteUnready(address)\":{\"details\":\"Called by a guardian as part of the automatic vote unready flow\"}},\"title\":\"Elections contract interface\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IElections.sol\":\"IElections\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IContractRegistry.sol\":{\"keccak256\":\"0x6af72993f6951883689d3e90e92861e4de1779810f9e0ace7212f12af251255c\",\"urls\":[\"bzz-raw://772374609c24adfc2e1e6ca8157e4d9b9b730636ddef7c91353492f0b15738c6\",\"dweb:/ipfs/QmTAZvGKEy4CaA8jQG4LkXDiBeL5CbyWMg6ypTVXCm1ipM\"]},\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IElections.sol\":{\"keccak256\":\"0xffaceec822c542e1c61c6ebd909c0c31f691eb24b8ad0f005e6710f0b9341965\",\"urls\":[\"bzz-raw://e2c198650db50a8e119ea259a026cc991fbd5c6f9dc87d5c0a15b7aef61f73d0\",\"dweb:/ipfs/QmTW1dtLMyHkrtbgvX6YXJmgovuvDUQdPKALzLC12vn5rV\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity 0.5.16;\n\nimport \"./IContractRegistry.sol\";\n\n/// @title Elections contract interface\ninterface IElections /* is IStakeChangeNotifier */ {\n    // Election state change events\n    event GuardianVotedUnready(address guardian);\n    event GuardianVotedOut(address guardian);\n\tevent GuardianVotedIn(address guardian);\n\n    // Function calls\n    event VoteUnreadyCasted(address voter, address subject);\n    event VoteOutCasted(address voter, address[] subjects);\n\tevent StakeChanged(address addr, uint256 selfStake, uint256 delegated_stake, uint256 effective_stake);\n\n\t// Guardian readiness\n\tevent GuardianStatusUpdated(address addr, bool readyToSync, bool readyForCommittee);\n\n\t// Governance\n\tevent VoteUnreadyTimeoutSecondsChanged(uint32 newValue, uint32 oldValue);\n\tevent MinSelfStakePercentMilleChanged(uint32 newValue, uint32 oldValue);\n\tevent VoteOutLockTimeoutSecondsChanged(uint32 newValue, uint32 oldValue);\n\tevent VoteOutPercentageThresholdChanged(uint8 newValue, uint8 oldValue);\n\tevent VoteUnreadyPercentageThresholdChanged(uint8 newValue, uint8 oldValue);\n\n\n\t/*\n     * External methods\n     */\n\n    /// @dev Called by a guardian as part of the automatic vote unready flow\n\tfunction voteUnready(address subject_addr) external;\n\n    /// @dev Called by a guardian as part of the vote-out flow\n\tfunction voteOut(address[] calldata subject_addrs) external;\n\n\t/// @dev Called by a guardian when ready to join the committee, typically after syncing is complete or after being voted unready\n\tfunction readyForSync() external;\n\n\t/// @dev Called by a guardian when ready to join the committee, typically after syncing is complete or after being voted unready\n\tfunction readyForCommittee() external;\n\n\t/*\n     * Methods restricted to other Orbs contracts\n     */\n\n\t/// @dev Called by: delegation contract\n\t/// Notifies a delegated stake change event\n\t/// total_delegated_stake = 0 if addr delegates to another guardian\n\tfunction delegatedStakeChange(address addr, uint256 selfStake, uint256 total_delegated, uint256 delta_total_delegated, bool sign_total_delegated) external /* onlyDelegationContract */;\n\n\t/// @dev Called by: guardian registration contract\n\t/// Notifies a new guardian was registered\n\tfunction guardianRegistered(address addr) external /* onlyGuardiansRegistrationContract */;\n\n\t/// @dev Called by: guardian registration contract\n\t/// Notifies a new guardian was unregistered\n\tfunction guardianUnregistered(address addr) external /* onlyGuardiansRegistrationContract */;\n\n\t/// @dev Called by: guardian registration contract\n\t/// Notifies on a guardian certification change\n\tfunction guardianCertificationChanged(address addr, bool isCertified) external /* onlyCertificationContract */;\n\n\t/*\n\t * Governance\n\t */\n\n    /// @dev Updates the address calldata of the contract registry\n\tfunction setContractRegistry(IContractRegistry _contractRegistry) external /* onlyMigrationOwner */;\n\n}\n",
+  "sourcePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IElections.sol",
+  "ast": {
+    "absolutePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IElections.sol",
+    "exportedSymbols": {
+      "IElections": [
+        10754
+      ]
+    },
+    "id": 10755,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 10627,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:28"
+      },
+      {
+        "absolutePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IContractRegistry.sol",
+        "file": "./IContractRegistry.sol",
+        "id": 10628,
+        "nodeType": "ImportDirective",
+        "scope": 10755,
+        "sourceUnit": 10535,
+        "src": "25:33:28",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title Elections contract interface",
+        "fullyImplemented": false,
+        "id": 10754,
+        "linearizedBaseContracts": [
+          10754
+        ],
+        "name": "IElections",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10632,
+            "name": "GuardianVotedUnready",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10631,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10630,
+                  "indexed": false,
+                  "name": "guardian",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10632,
+                  "src": "220:16:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10629,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "220:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "219:18:28"
+            },
+            "src": "193:45:28"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10636,
+            "name": "GuardianVotedOut",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10635,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10634,
+                  "indexed": false,
+                  "name": "guardian",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10636,
+                  "src": "266:16:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10633,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "266:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "265:18:28"
+            },
+            "src": "243:41:28"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10640,
+            "name": "GuardianVotedIn",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10639,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10638,
+                  "indexed": false,
+                  "name": "guardian",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10640,
+                  "src": "308:16:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10637,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "308:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "307:18:28"
+            },
+            "src": "286:40:28"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10646,
+            "name": "VoteUnreadyCasted",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10645,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10642,
+                  "indexed": false,
+                  "name": "voter",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10646,
+                  "src": "378:13:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10641,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "378:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10644,
+                  "indexed": false,
+                  "name": "subject",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10646,
+                  "src": "393:15:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10643,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "393:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "377:32:28"
+            },
+            "src": "354:56:28"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10653,
+            "name": "VoteOutCasted",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10652,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10648,
+                  "indexed": false,
+                  "name": "voter",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10653,
+                  "src": "435:13:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10647,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "435:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10651,
+                  "indexed": false,
+                  "name": "subjects",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10653,
+                  "src": "450:18:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 10649,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "450:7:28",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 10650,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "450:9:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "434:35:28"
+            },
+            "src": "415:55:28"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10663,
+            "name": "StakeChanged",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10662,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10655,
+                  "indexed": false,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10663,
+                  "src": "491:12:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10654,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "491:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10657,
+                  "indexed": false,
+                  "name": "selfStake",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10663,
+                  "src": "505:17:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10656,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "505:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10659,
+                  "indexed": false,
+                  "name": "delegated_stake",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10663,
+                  "src": "524:23:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10658,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "524:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10661,
+                  "indexed": false,
+                  "name": "effective_stake",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10663,
+                  "src": "549:23:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10660,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "549:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "490:83:28"
+            },
+            "src": "472:102:28"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10671,
+            "name": "GuardianStatusUpdated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10670,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10665,
+                  "indexed": false,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10671,
+                  "src": "628:12:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10664,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "628:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10667,
+                  "indexed": false,
+                  "name": "readyToSync",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10671,
+                  "src": "642:16:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 10666,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "642:4:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10669,
+                  "indexed": false,
+                  "name": "readyForCommittee",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10671,
+                  "src": "660:22:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 10668,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "660:4:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "627:56:28"
+            },
+            "src": "600:84:28"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10677,
+            "name": "VoteUnreadyTimeoutSecondsChanged",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10676,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10673,
+                  "indexed": false,
+                  "name": "newValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10677,
+                  "src": "741:15:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 10672,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "741:6:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10675,
+                  "indexed": false,
+                  "name": "oldValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10677,
+                  "src": "758:15:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 10674,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "758:6:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "740:34:28"
+            },
+            "src": "702:73:28"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10683,
+            "name": "MinSelfStakePercentMilleChanged",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10682,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10679,
+                  "indexed": false,
+                  "name": "newValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10683,
+                  "src": "815:15:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 10678,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "815:6:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10681,
+                  "indexed": false,
+                  "name": "oldValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10683,
+                  "src": "832:15:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 10680,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "832:6:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "814:34:28"
+            },
+            "src": "777:72:28"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10689,
+            "name": "VoteOutLockTimeoutSecondsChanged",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10688,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10685,
+                  "indexed": false,
+                  "name": "newValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10689,
+                  "src": "890:15:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 10684,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "890:6:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10687,
+                  "indexed": false,
+                  "name": "oldValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10689,
+                  "src": "907:15:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 10686,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "907:6:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "889:34:28"
+            },
+            "src": "851:73:28"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10695,
+            "name": "VoteOutPercentageThresholdChanged",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10694,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10691,
+                  "indexed": false,
+                  "name": "newValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10695,
+                  "src": "966:14:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 10690,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "966:5:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10693,
+                  "indexed": false,
+                  "name": "oldValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10695,
+                  "src": "982:14:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 10692,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "982:5:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "965:32:28"
+            },
+            "src": "926:72:28"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10701,
+            "name": "VoteUnreadyPercentageThresholdChanged",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10700,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10697,
+                  "indexed": false,
+                  "name": "newValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10701,
+                  "src": "1044:14:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 10696,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1044:5:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10699,
+                  "indexed": false,
+                  "name": "oldValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10701,
+                  "src": "1060:14:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 10698,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1060:5:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1043:32:28"
+            },
+            "src": "1000:76:28"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by a guardian as part of the automatic vote unready flow",
+            "id": 10706,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "voteUnready",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10704,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10703,
+                  "name": "subject_addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10706,
+                  "src": "1215:20:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10702,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1215:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1214:22:28"
+            },
+            "returnParameters": {
+              "id": 10705,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1245:0:28"
+            },
+            "scope": 10754,
+            "src": "1194:52:28",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by a guardian as part of the vote-out flow",
+            "id": 10712,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "voteOut",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10710,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10709,
+                  "name": "subject_addrs",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10712,
+                  "src": "1329:32:28",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 10707,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1329:7:28",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 10708,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1329:9:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1328:34:28"
+            },
+            "returnParameters": {
+              "id": 10711,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1371:0:28"
+            },
+            "scope": 10754,
+            "src": "1312:60:28",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by a guardian when ready to join the committee, typically after syncing is complete or after being voted unready",
+            "id": 10715,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "readyForSync",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10713,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1526:2:28"
+            },
+            "returnParameters": {
+              "id": 10714,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1537:0:28"
+            },
+            "scope": 10754,
+            "src": "1505:33:28",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by a guardian when ready to join the committee, typically after syncing is complete or after being voted unready",
+            "id": 10718,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "readyForCommittee",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10716,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1697:2:28"
+            },
+            "returnParameters": {
+              "id": 10717,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1708:0:28"
+            },
+            "scope": 10754,
+            "src": "1671:38:28",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by: delegation contract\n Notifies a delegated stake change event\n total_delegated_stake = 0 if addr delegates to another guardian",
+            "id": 10731,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "delegatedStakeChange",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10729,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10720,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10731,
+                  "src": "1960:12:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10719,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1960:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10722,
+                  "name": "selfStake",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10731,
+                  "src": "1974:17:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10721,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1974:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10724,
+                  "name": "total_delegated",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10731,
+                  "src": "1993:23:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10723,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1993:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10726,
+                  "name": "delta_total_delegated",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10731,
+                  "src": "2018:29:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10725,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2018:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10728,
+                  "name": "sign_total_delegated",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10731,
+                  "src": "2049:25:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 10727,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2049:4:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1959:116:28"
+            },
+            "returnParameters": {
+              "id": 10730,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2113:0:28"
+            },
+            "scope": 10754,
+            "src": "1930:184:28",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by: guardian registration contract\n Notifies a new guardian was registered",
+            "id": 10736,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "guardianRegistered",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10734,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10733,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10736,
+                  "src": "2241:12:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10732,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2241:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2240:14:28"
+            },
+            "returnParameters": {
+              "id": 10735,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2303:0:28"
+            },
+            "scope": 10754,
+            "src": "2213:91:28",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by: guardian registration contract\n Notifies a new guardian was unregistered",
+            "id": 10741,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "guardianUnregistered",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10739,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10738,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10741,
+                  "src": "2435:12:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10737,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2435:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2434:14:28"
+            },
+            "returnParameters": {
+              "id": 10740,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2497:0:28"
+            },
+            "scope": 10754,
+            "src": "2405:93:28",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by: guardian registration contract\n Notifies on a guardian certification change",
+            "id": 10748,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "guardianCertificationChanged",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10746,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10743,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10748,
+                  "src": "2640:12:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10742,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2640:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10745,
+                  "name": "isCertified",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10748,
+                  "src": "2654:16:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 10744,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2654:4:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2639:32:28"
+            },
+            "returnParameters": {
+              "id": 10747,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2712:0:28"
+            },
+            "scope": 10754,
+            "src": "2602:111:28",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Updates the address calldata of the contract registry",
+            "id": 10753,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setContractRegistry",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10751,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10750,
+                  "name": "_contractRegistry",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10753,
+                  "src": "2837:35:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IContractRegistry_$10534",
+                    "typeString": "contract IContractRegistry"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 10749,
+                    "name": "IContractRegistry",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 10534,
+                    "src": "2837:17:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IContractRegistry_$10534",
+                      "typeString": "contract IContractRegistry"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2836:37:28"
+            },
+            "returnParameters": {
+              "id": 10752,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2907:0:28"
+            },
+            "scope": 10754,
+            "src": "2808:100:28",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 10755,
+        "src": "100:2811:28"
+      }
+    ],
+    "src": "0:2912:28"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IElections.sol",
+    "exportedSymbols": {
+      "IElections": [
+        10754
+      ]
+    },
+    "id": 10755,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 10627,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:28"
+      },
+      {
+        "absolutePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IContractRegistry.sol",
+        "file": "./IContractRegistry.sol",
+        "id": 10628,
+        "nodeType": "ImportDirective",
+        "scope": 10755,
+        "sourceUnit": 10535,
+        "src": "25:33:28",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title Elections contract interface",
+        "fullyImplemented": false,
+        "id": 10754,
+        "linearizedBaseContracts": [
+          10754
+        ],
+        "name": "IElections",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10632,
+            "name": "GuardianVotedUnready",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10631,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10630,
+                  "indexed": false,
+                  "name": "guardian",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10632,
+                  "src": "220:16:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10629,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "220:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "219:18:28"
+            },
+            "src": "193:45:28"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10636,
+            "name": "GuardianVotedOut",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10635,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10634,
+                  "indexed": false,
+                  "name": "guardian",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10636,
+                  "src": "266:16:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10633,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "266:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "265:18:28"
+            },
+            "src": "243:41:28"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10640,
+            "name": "GuardianVotedIn",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10639,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10638,
+                  "indexed": false,
+                  "name": "guardian",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10640,
+                  "src": "308:16:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10637,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "308:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "307:18:28"
+            },
+            "src": "286:40:28"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10646,
+            "name": "VoteUnreadyCasted",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10645,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10642,
+                  "indexed": false,
+                  "name": "voter",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10646,
+                  "src": "378:13:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10641,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "378:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10644,
+                  "indexed": false,
+                  "name": "subject",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10646,
+                  "src": "393:15:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10643,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "393:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "377:32:28"
+            },
+            "src": "354:56:28"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10653,
+            "name": "VoteOutCasted",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10652,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10648,
+                  "indexed": false,
+                  "name": "voter",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10653,
+                  "src": "435:13:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10647,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "435:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10651,
+                  "indexed": false,
+                  "name": "subjects",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10653,
+                  "src": "450:18:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 10649,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "450:7:28",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 10650,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "450:9:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "434:35:28"
+            },
+            "src": "415:55:28"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10663,
+            "name": "StakeChanged",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10662,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10655,
+                  "indexed": false,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10663,
+                  "src": "491:12:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10654,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "491:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10657,
+                  "indexed": false,
+                  "name": "selfStake",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10663,
+                  "src": "505:17:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10656,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "505:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10659,
+                  "indexed": false,
+                  "name": "delegated_stake",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10663,
+                  "src": "524:23:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10658,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "524:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10661,
+                  "indexed": false,
+                  "name": "effective_stake",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10663,
+                  "src": "549:23:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10660,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "549:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "490:83:28"
+            },
+            "src": "472:102:28"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10671,
+            "name": "GuardianStatusUpdated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10670,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10665,
+                  "indexed": false,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10671,
+                  "src": "628:12:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10664,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "628:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10667,
+                  "indexed": false,
+                  "name": "readyToSync",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10671,
+                  "src": "642:16:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 10666,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "642:4:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10669,
+                  "indexed": false,
+                  "name": "readyForCommittee",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10671,
+                  "src": "660:22:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 10668,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "660:4:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "627:56:28"
+            },
+            "src": "600:84:28"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10677,
+            "name": "VoteUnreadyTimeoutSecondsChanged",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10676,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10673,
+                  "indexed": false,
+                  "name": "newValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10677,
+                  "src": "741:15:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 10672,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "741:6:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10675,
+                  "indexed": false,
+                  "name": "oldValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10677,
+                  "src": "758:15:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 10674,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "758:6:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "740:34:28"
+            },
+            "src": "702:73:28"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10683,
+            "name": "MinSelfStakePercentMilleChanged",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10682,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10679,
+                  "indexed": false,
+                  "name": "newValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10683,
+                  "src": "815:15:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 10678,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "815:6:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10681,
+                  "indexed": false,
+                  "name": "oldValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10683,
+                  "src": "832:15:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 10680,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "832:6:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "814:34:28"
+            },
+            "src": "777:72:28"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10689,
+            "name": "VoteOutLockTimeoutSecondsChanged",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10688,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10685,
+                  "indexed": false,
+                  "name": "newValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10689,
+                  "src": "890:15:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 10684,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "890:6:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10687,
+                  "indexed": false,
+                  "name": "oldValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10689,
+                  "src": "907:15:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 10686,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "907:6:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "889:34:28"
+            },
+            "src": "851:73:28"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10695,
+            "name": "VoteOutPercentageThresholdChanged",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10694,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10691,
+                  "indexed": false,
+                  "name": "newValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10695,
+                  "src": "966:14:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 10690,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "966:5:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10693,
+                  "indexed": false,
+                  "name": "oldValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10695,
+                  "src": "982:14:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 10692,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "982:5:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "965:32:28"
+            },
+            "src": "926:72:28"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10701,
+            "name": "VoteUnreadyPercentageThresholdChanged",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10700,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10697,
+                  "indexed": false,
+                  "name": "newValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10701,
+                  "src": "1044:14:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 10696,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1044:5:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10699,
+                  "indexed": false,
+                  "name": "oldValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10701,
+                  "src": "1060:14:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 10698,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1060:5:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1043:32:28"
+            },
+            "src": "1000:76:28"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by a guardian as part of the automatic vote unready flow",
+            "id": 10706,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "voteUnready",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10704,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10703,
+                  "name": "subject_addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10706,
+                  "src": "1215:20:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10702,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1215:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1214:22:28"
+            },
+            "returnParameters": {
+              "id": 10705,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1245:0:28"
+            },
+            "scope": 10754,
+            "src": "1194:52:28",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by a guardian as part of the vote-out flow",
+            "id": 10712,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "voteOut",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10710,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10709,
+                  "name": "subject_addrs",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10712,
+                  "src": "1329:32:28",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 10707,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1329:7:28",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 10708,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1329:9:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1328:34:28"
+            },
+            "returnParameters": {
+              "id": 10711,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1371:0:28"
+            },
+            "scope": 10754,
+            "src": "1312:60:28",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by a guardian when ready to join the committee, typically after syncing is complete or after being voted unready",
+            "id": 10715,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "readyForSync",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10713,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1526:2:28"
+            },
+            "returnParameters": {
+              "id": 10714,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1537:0:28"
+            },
+            "scope": 10754,
+            "src": "1505:33:28",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by a guardian when ready to join the committee, typically after syncing is complete or after being voted unready",
+            "id": 10718,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "readyForCommittee",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10716,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1697:2:28"
+            },
+            "returnParameters": {
+              "id": 10717,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1708:0:28"
+            },
+            "scope": 10754,
+            "src": "1671:38:28",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by: delegation contract\n Notifies a delegated stake change event\n total_delegated_stake = 0 if addr delegates to another guardian",
+            "id": 10731,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "delegatedStakeChange",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10729,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10720,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10731,
+                  "src": "1960:12:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10719,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1960:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10722,
+                  "name": "selfStake",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10731,
+                  "src": "1974:17:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10721,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1974:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10724,
+                  "name": "total_delegated",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10731,
+                  "src": "1993:23:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10723,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1993:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10726,
+                  "name": "delta_total_delegated",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10731,
+                  "src": "2018:29:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10725,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2018:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10728,
+                  "name": "sign_total_delegated",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10731,
+                  "src": "2049:25:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 10727,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2049:4:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1959:116:28"
+            },
+            "returnParameters": {
+              "id": 10730,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2113:0:28"
+            },
+            "scope": 10754,
+            "src": "1930:184:28",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by: guardian registration contract\n Notifies a new guardian was registered",
+            "id": 10736,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "guardianRegistered",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10734,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10733,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10736,
+                  "src": "2241:12:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10732,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2241:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2240:14:28"
+            },
+            "returnParameters": {
+              "id": 10735,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2303:0:28"
+            },
+            "scope": 10754,
+            "src": "2213:91:28",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by: guardian registration contract\n Notifies a new guardian was unregistered",
+            "id": 10741,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "guardianUnregistered",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10739,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10738,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10741,
+                  "src": "2435:12:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10737,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2435:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2434:14:28"
+            },
+            "returnParameters": {
+              "id": 10740,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2497:0:28"
+            },
+            "scope": 10754,
+            "src": "2405:93:28",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by: guardian registration contract\n Notifies on a guardian certification change",
+            "id": 10748,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "guardianCertificationChanged",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10746,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10743,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10748,
+                  "src": "2640:12:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10742,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2640:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10745,
+                  "name": "isCertified",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10748,
+                  "src": "2654:16:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 10744,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2654:4:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2639:32:28"
+            },
+            "returnParameters": {
+              "id": 10747,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2712:0:28"
+            },
+            "scope": 10754,
+            "src": "2602:111:28",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Updates the address calldata of the contract registry",
+            "id": 10753,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setContractRegistry",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10751,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10750,
+                  "name": "_contractRegistry",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10753,
+                  "src": "2837:35:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IContractRegistry_$10534",
+                    "typeString": "contract IContractRegistry"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 10749,
+                    "name": "IContractRegistry",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 10534,
+                    "src": "2837:17:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IContractRegistry_$10534",
+                      "typeString": "contract IContractRegistry"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2836:37:28"
+            },
+            "returnParameters": {
+              "id": 10752,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2907:0:28"
+            },
+            "scope": 10754,
+            "src": "2808:100:28",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 10755,
+        "src": "100:2811:28"
+      }
+    ],
+    "src": "0:2912:28"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.23",
+  "updatedAt": "2020-08-06T21:58:43.818Z",
+  "devdoc": {
+    "methods": {
+      "delegatedStakeChange(address,uint256,uint256,uint256,bool)": {
+        "details": "Called by: delegation contract Notifies a delegated stake change event total_delegated_stake = 0 if addr delegates to another guardian"
+      },
+      "guardianCertificationChanged(address,bool)": {
+        "details": "Called by: guardian registration contract Notifies on a guardian certification change"
+      },
+      "guardianRegistered(address)": {
+        "details": "Called by: guardian registration contract Notifies a new guardian was registered"
+      },
+      "guardianUnregistered(address)": {
+        "details": "Called by: guardian registration contract Notifies a new guardian was unregistered"
+      },
+      "readyForCommittee()": {
+        "details": "Called by a guardian when ready to join the committee, typically after syncing is complete or after being voted unready"
+      },
+      "readyForSync()": {
+        "details": "Called by a guardian when ready to join the committee, typically after syncing is complete or after being voted unready"
+      },
+      "setContractRegistry(address)": {
+        "details": "Updates the address calldata of the contract registry"
+      },
+      "voteOut(address[])": {
+        "details": "Called by a guardian as part of the vote-out flow"
+      },
+      "voteUnready(address)": {
+        "details": "Called by a guardian as part of the automatic vote unready flow"
+      }
+    },
+    "title": "Elections contract interface"
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

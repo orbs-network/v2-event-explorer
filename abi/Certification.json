@@ -1,0 +1,1948 @@
+{
+  "contractName": "Certification",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        }
+      ],
+      "name": "ContractRegistryAddressUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousFunctionalOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newFunctionalOwner",
+          "type": "address"
+        }
+      ],
+      "name": "FunctionalOwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "guardian",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "isCertified",
+          "type": "bool"
+        }
+      ],
+      "name": "GuardianCertificationUpdate",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "Locked",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousMigrationOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newMigrationOwner",
+          "type": "address"
+        }
+      ],
+      "name": "MigrationOwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "Unlocked",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "claimFunctionalOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "claimMigrationOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "functionalOwner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getBootstrapRewardsWallet",
+      "outputs": [
+        {
+          "internalType": "contract IProtocolWallet",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getCertificationContract",
+      "outputs": [
+        {
+          "internalType": "contract ICertification",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getCommitteeContract",
+      "outputs": [
+        {
+          "internalType": "contract ICommittee",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getDelegationsContract",
+      "outputs": [
+        {
+          "internalType": "contract IDelegations",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getElectionsContract",
+      "outputs": [
+        {
+          "internalType": "contract IElections",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getGuardiansRegistrationContract",
+      "outputs": [
+        {
+          "internalType": "contract IGuardiansRegistration",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getProtocolContract",
+      "outputs": [
+        {
+          "internalType": "contract IProtocol",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getRewardsContract",
+      "outputs": [
+        {
+          "internalType": "contract IRewards",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getStakingContract",
+      "outputs": [
+        {
+          "internalType": "contract IStakingContract",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getStakingRewardsWallet",
+      "outputs": [
+        {
+          "internalType": "contract IProtocolWallet",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getSubscriptionsContract",
+      "outputs": [
+        {
+          "internalType": "contract ISubscriptions",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isFunctionalOwner",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isMigrationOwner",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "lock",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "locked",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "migrationOwner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceFunctionalOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceMigrationOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "contract IContractRegistry",
+          "name": "_contractRegistry",
+          "type": "address"
+        }
+      ],
+      "name": "setContractRegistry",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newFunctionalOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferFunctionalOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newMigrationOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferMigrationOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "unlock",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        }
+      ],
+      "name": "isGuardianCertified",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "isCertified",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "isCertified",
+          "type": "bool"
+        }
+      ],
+      "name": "setGuardianCertification",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"}],\"name\":\"ContractRegistryAddressUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousFunctionalOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newFunctionalOwner\",\"type\":\"address\"}],\"name\":\"FunctionalOwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"guardian\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isCertified\",\"type\":\"bool\"}],\"name\":\"GuardianCertificationUpdate\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[],\"name\":\"Locked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousMigrationOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newMigrationOwner\",\"type\":\"address\"}],\"name\":\"MigrationOwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[],\"name\":\"Unlocked\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[],\"name\":\"claimFunctionalOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"claimMigrationOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"functionalOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getBootstrapRewardsWallet\",\"outputs\":[{\"internalType\":\"contract IProtocolWallet\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getCertificationContract\",\"outputs\":[{\"internalType\":\"contract ICertification\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getCommitteeContract\",\"outputs\":[{\"internalType\":\"contract ICommittee\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getDelegationsContract\",\"outputs\":[{\"internalType\":\"contract IDelegations\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getElectionsContract\",\"outputs\":[{\"internalType\":\"contract IElections\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getGuardiansRegistrationContract\",\"outputs\":[{\"internalType\":\"contract IGuardiansRegistration\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getProtocolContract\",\"outputs\":[{\"internalType\":\"contract IProtocol\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getRewardsContract\",\"outputs\":[{\"internalType\":\"contract IRewards\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getStakingContract\",\"outputs\":[{\"internalType\":\"contract IStakingContract\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getStakingRewardsWallet\",\"outputs\":[{\"internalType\":\"contract IProtocolWallet\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getSubscriptionsContract\",\"outputs\":[{\"internalType\":\"contract ISubscriptions\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"isFunctionalOwner\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"}],\"name\":\"isGuardianCertified\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"isCertified\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"isMigrationOwner\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"lock\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"locked\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"migrationOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"renounceFunctionalOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"renounceMigrationOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"contract IContractRegistry\",\"name\":\"_contractRegistry\",\"type\":\"address\"}],\"name\":\"setContractRegistry\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"isCertified\",\"type\":\"bool\"}],\"name\":\"setGuardianCertification\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"newFunctionalOwner\",\"type\":\"address\"}],\"name\":\"transferFunctionalOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"newMigrationOwner\",\"type\":\"address\"}],\"name\":\"transferMigrationOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"unlock\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"claimFunctionalOwnership()\":{\"details\":\"Allows the pendingFunctionalOwner address to finalize the transfer.\"},\"claimMigrationOwnership()\":{\"details\":\"Allows the pendingMigrationOwner address to finalize the transfer.\"},\"functionalOwner()\":{\"details\":\"Returns the address of the current functionalOwner.\"},\"isFunctionalOwner()\":{\"details\":\"Returns true if the caller is the current functionalOwner.\"},\"isMigrationOwner()\":{\"details\":\"Returns true if the caller is the current migrationOwner.\"},\"migrationOwner()\":{\"details\":\"Returns the address of the current migrationOwner.\"},\"renounceFunctionalOwnership()\":{\"details\":\"Leaves the contract without functionalOwner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current functionalOwner.     * NOTE: Renouncing functionalOwnership will leave the contract without an functionalOwner, thereby removing any functionality that is only available to the functionalOwner.\"},\"renounceMigrationOwnership()\":{\"details\":\"Leaves the contract without migrationOwner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current migrationOwner.     * NOTE: Renouncing migrationOwnership will leave the contract without an migrationOwner, thereby removing any functionality that is only available to the migrationOwner.\"},\"transferFunctionalOwnership(address)\":{\"details\":\"Allows the current functionalOwner to set the pendingOwner address.\",\"params\":{\"newFunctionalOwner\":\"The address to transfer functionalOwnership to.\"}},\"transferMigrationOwnership(address)\":{\"details\":\"Allows the current migrationOwner to set the pendingOwner address.\",\"params\":{\"newMigrationOwner\":\"The address to transfer migrationOwnership to.\"}}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/Certification.sol\":\"Certification\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/Certification.sol\":{\"keccak256\":\"0x2a6639de0b0ee81d84e47ed71bd13c5b2bc647e7bd84c1d30d49af87e637718d\",\"urls\":[\"bzz-raw://da3489968f05819804ce015cfa9a8383f333bbca4631ca8af7d63ba77740d907\",\"dweb:/ipfs/QmNQQZhzavjWeBtEsvxf7ECSxpXCoas1eGP9oniNUGbNGo\"]},\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/ContractRegistryAccessor.sol\":{\"keccak256\":\"0xcf57713fd74a2ceaa3d9c655a641ee86e92e1404b5a27bba8474a9b6292dd711\",\"urls\":[\"bzz-raw://25edcb0f801bbad62f56b85d466621eb1bd4a2e8d695cd72838e26a934ca891e\",\"dweb:/ipfs/QmVsqnBAUiJaZ1LfE6MZFKitiwcdC7Kzxbq8Q43U5dewHR\"]},\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/IMigratableStakingContract.sol\":{\"keccak256\":\"0x287b1627883cb23828b02b14621cdb50804ca2b7ff4217437f44cd19d1bcdfa7\",\"urls\":[\"bzz-raw://206b9e4f3df0cb04b70be5b7a00d9e72edb0080a68aaed542a1985f6cf2b7cd1\",\"dweb:/ipfs/QmdKE76EErfCDTw5kyYACs7WtCRjdSKgjaxD88Kj51aTPQ\"]},\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/IStakeChangeNotifier.sol\":{\"keccak256\":\"0x8c5ea4ca9a4ddbca8191edb749915f0bbb470fe3a26c0c66e857c4e520bba62f\",\"urls\":[\"bzz-raw://d80a852aaa8362638c2941058af42df684730191abb1c358b87ba7fec825b68b\",\"dweb:/ipfs/QmP2t6ZKNoGVLacmPrw2KHZMCzoBydgiLPCZrweqL7dyBw\"]},\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/IStakingContract.sol\":{\"keccak256\":\"0xa603872af63779e8cfac9af347fbc8b0f9be94b4e4db674f5f0ad73532268f9c\",\"urls\":[\"bzz-raw://9b012d573651413b9d2bf7a023f6b3a84d726cb8bf7a18dc47f9dff83f54115b\",\"dweb:/ipfs/QmWuF98LKpKv88Y1kyXBxRMJgEVs5VTG6ohNGJPaMtKCtH\"]},\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/Lockable.sol\":{\"keccak256\":\"0x7a0c66381019bae3ca7fac0c74fb41cd4094d81c7811525b9a244d7b50847db6\",\"urls\":[\"bzz-raw://e76b91cf340b0e7704c774af78f3ad040a1128663df990922a253cb51eb485e4\",\"dweb:/ipfs/QmcaGGiSX2ycgwNRLYvqYUJZgho4q58k4fXLgY8sqvNzNt\"]},\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/WithClaimableFunctionalOwnership.sol\":{\"keccak256\":\"0xddee042999c4e37ab40f6c13c7194e3c21aa414317651b39f0d1684376fb6551\",\"urls\":[\"bzz-raw://1e00801b0b2bea307bec2cacad82290e8e18b9d569db6d5846bacb8fccda6f24\",\"dweb:/ipfs/QmXoh1fJw5D3RLLKtxnio7bRjCA2GRmGZsgg5nTSMNGr3d\"]},\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/WithClaimableMigrationOwnership.sol\":{\"keccak256\":\"0x2fc5723c9ad17fc19ffdd33423a8d8c47b3fe3aaf023f51918af85b1687887fc\",\"urls\":[\"bzz-raw://4b7b6a22c7d0d60700d385fe4a1e5e2e23084ea1af353f5209030471b6acda50\",\"dweb:/ipfs/QmVLcZ3kdLZzExvPph6VDU8ULk7XG8fGDnW27xH4pHRkea\"]},\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/interfaces/IElections.sol\":{\"keccak256\":\"0x8412bd88073241a9aab68d0eea19c222e8f50c40c36862535646753e767a2c11\",\"urls\":[\"bzz-raw://f7b8154fb2bb61fbe4ea2c16128cdae13f42196657bd99d0505c535484204ced\",\"dweb:/ipfs/QmRevVo69AEpj9NBwNPNxzFtFWrHwWP99YWyuhVTryiu6w\"]},\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/interfaces/IRewards.sol\":{\"keccak256\":\"0x3e93aa60200371fafaab042f7499dac1d7d16a0b2d0889d0a6b2ba7b35f0433f\",\"urls\":[\"bzz-raw://9e24f56c6c2503fd1f6cd2d962954a4a9d6b736a43f4f83483f726959208041e\",\"dweb:/ipfs/Qmb8sRa5QGkTyk6NPYksVBmMxira6KzMYJmf11NZPk1z7a\"]},\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/ICertification.sol\":{\"keccak256\":\"0xf24287f819ef01e923fa0bee9ce0a31bc15ee328eb2d60e3adc2d4c7d8fbad82\",\"urls\":[\"bzz-raw://ceb02dc614f3d09ef064140a68e664a73062579061cd09cfb5b69a5a0b05c747\",\"dweb:/ipfs/QmYy8jzJEvy1oasZMZFLaPX7XEex73bAU3RBWstoHi9L5e\"]},\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/ICommittee.sol\":{\"keccak256\":\"0x3ce6df40d1961a24e95b6e30d5aacb97536bec461435d2f686ffbf1f78f8c022\",\"urls\":[\"bzz-raw://121ba74b95627c2a3df71a7a6fb713df33bd2a3e8eb6003853867e1aadfbd4a5\",\"dweb:/ipfs/QmWPU5NVSrDAuMxamJh7gCNogARHMGSZYxQm5o1xwK6bZx\"]},\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IContractRegistry.sol\":{\"keccak256\":\"0x6af72993f6951883689d3e90e92861e4de1779810f9e0ace7212f12af251255c\",\"urls\":[\"bzz-raw://772374609c24adfc2e1e6ca8157e4d9b9b730636ddef7c91353492f0b15738c6\",\"dweb:/ipfs/QmTAZvGKEy4CaA8jQG4LkXDiBeL5CbyWMg6ypTVXCm1ipM\"]},\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IDelegation.sol\":{\"keccak256\":\"0xe5e6e72c777df475881975d8080fb2f3ff08a872398598a6b961b7289d2c9e7a\",\"urls\":[\"bzz-raw://2731eec2dcd2d0fc5db16fcd276adcd0484e52c6243fb150f5e6b25759fd822a\",\"dweb:/ipfs/QmddSLgZmsEFkFMFvwTYTfAZVc3ZHJeDejBnYc7xmJ5pWp\"]},\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IGuardiansRegistration.sol\":{\"keccak256\":\"0x0dbc5c1e9be819c761afee64c3462897a23c49432484c64fbd83f56ecce2a564\",\"urls\":[\"bzz-raw://d481c035a16b09ee043efe0a825f72e076d21fb638dee691fbdfd49e544723d1\",\"dweb:/ipfs/Qme81DYhm8vCgniMzQpPyoQWffq4j93hMxGjpRSoVdzEX5\"]},\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IProtocol.sol\":{\"keccak256\":\"0x8fd6f4934256b07d6a9a39d9e5d2915accb41c4c7df0e9b057988285b317b2cf\",\"urls\":[\"bzz-raw://c5e2280dd58868b306a56fd88147a1e09dc5b178c8e2d02599e8112d0d5d8c57\",\"dweb:/ipfs/QmeEMZA9KzScuKvgTyzT9PdxKpoMMvMLWgu47Who6rZ1tV\"]},\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IProtocolWallet.sol\":{\"keccak256\":\"0xbb65225d2f09ea8fc444ac97a5a6e9e767d2d3bc7716c49228ae3ae6dcc94cbc\",\"urls\":[\"bzz-raw://4367268f8966779c77c0283826baa22d38c255c3f3d82a4669a2ea0c384b8833\",\"dweb:/ipfs/QmZr6S27qDJpeaoMWYdtXQGRp5S9SCZpQ95ZxU8pZAXYhu\"]},\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/ISubscriptions.sol\":{\"keccak256\":\"0xfd34f0a2327e61fb5373342248a5360dd217eb237286ed2ba6ef4ba64c92a2f5\",\"urls\":[\"bzz-raw://6d2b5457413dd2d239baaba7fae474aef1b23d55db5549a97b5a96bc1cea6597\",\"dweb:/ipfs/QmNZUtwvHZNTxiRek875Ux3oabGFeCv7Lfb8F2CgVAetn4\"]},\"@openzeppelin/contracts/GSN/Context.sol\":{\"keccak256\":\"0x90a3995645af7562d84b9d69363ffa5ae7217714ab61e951bf7bc450f40e4061\",\"urls\":[\"bzz-raw://216ef9d6b614db4eb46970b4e84903f2534a45572dd30a79f0041f1a5830f436\",\"dweb:/ipfs/QmNPrJ4MWKUAWzKXpUqeyKRUfosaoANZAqXgvepdrCwZAG\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xe5bb0f57cff3e299f360052ba50f1ea0fff046df2be070b6943e0e3c3fdad8a9\",\"urls\":[\"bzz-raw://59fd025151435da35faa8093a5c7a17de02de9d08ad27275c5cdf05050820d91\",\"dweb:/ipfs/QmQMvwEcPhoRXzbXyrdoeRtvLoifUW9Qh7Luho7bmUPRkc\"]}},\"version\":1}",
+  "bytecode": "0x608060405260006100176001600160e01b036100c716565b600080546001600160a01b0319166001600160a01b0383169081178255604051929350917f7e8c4fc74f50849b4ec635ed03f5d13f87cd46ae422e97479704c6fd1c164e20908290a35060006100746001600160e01b036100c716565b600380546001600160a01b0319166001600160a01b038316908117909155604051919250906000907f322ef0cb3bcc6b6f659770a0acaf7473e9bc6ebe63e04e4f28924c285c8cc5ea908290a3506100cb565b3390565b611115806100da6000396000f3fe608060405234801561001057600080fd5b50600436106101a95760003560e01c80639b9a7e68116100f9578063bed1807d11610097578063ddc0d5d611610071578063ddc0d5d614610318578063ec5e178c14610320578063f83d08ba14610328578063fcd13d6514610330576101a9565b8063bed1807d146102e2578063cf309012146102ea578063dc8b6d73146102f2576101a9565b8063a69df4b5116100d3578063a69df4b5146102c2578063ab6acfc4146102ca578063ad751ed3146102d2578063b5f1c29d146102da576101a9565b80639b9a7e681461026e5780639f587d1c14610294578063a09e0d90146102ba576101a9565b80633b781309116101665780636cdb6746116101405780636cdb67461461024e5780637b93af4c146102565780638e68dce41461025e578063977d4e5a14610266576101a9565b80633b781309146102105780635282346d1461021857806357a5582e14610220576101a9565b8063021abb93146101ae57806311caadfb146101ca5780631dc669f4146101ee578063209df1e2146101f85780632c43bdd5146102005780633a88ab8e14610208575b600080fd5b6101b6610356565b604080519115158252519081900360200190f35b6101d261037a565b604080516001600160a01b039092168252519081900360200190f35b6101f661040e565b005b6101f661047e565b6101d261050b565b6101b661051a565b6101f6610531565b6101d26105be565b6101f66004803603604081101561023657600080fd5b506001600160a01b0381351690602001351515610623565b6101d2610787565b6101f66107f5565b6101d2610865565b6101d26108c6565b6101f66004803603602081101561028457600080fd5b50356001600160a01b031661092d565b6101f6600480360360208110156102aa57600080fd5b50356001600160a01b0316610992565b6101d26109f7565b6101f6610a5e565b6101d2610ad9565b6101d2610b3c565b6101d2610b9d565b6101d2610bff565b6101b6610c0e565b6101b66004803603602081101561030857600080fd5b50356001600160a01b0316610c1e565b6101d2610c3c565b6101d2610cab565b6101f6610d1b565b6101f66004803603602081101561034657600080fd5b50356001600160a01b0316610d9c565b600080546001600160a01b031661036b610e33565b6001600160a01b031614905090565b6002546040805163349f642f60e11b81526020600482018190526009602483015268656c656374696f6e7360b81b604483015291516000936001600160a01b03169263693ec85e9260648082019391829003018186803b1580156103dd57600080fd5b505afa1580156103f1573d6000803e3d6000fd5b505050506040513d602081101561040757600080fd5b5051905090565b6004546001600160a01b031633146104575760405162461bcd60e51b81526004018080602001828103825260298152602001806110b86029913960400191505060405180910390fd5b60045461046c906001600160a01b0316610e37565b600480546001600160a01b0319169055565b610486610356565b6104c15760405162461bcd60e51b8152600401808060200182810382526041815260200180610f9e6041913960600191505060405180910390fd5b600080546040516001600160a01b03909116907f7e8c4fc74f50849b4ec635ed03f5d13f87cd46ae422e97479704c6fd1c164e20908390a3600080546001600160a01b0319169055565b6000546001600160a01b031690565b6003546000906001600160a01b031661036b610e33565b61053961051a565b6105745760405162461bcd60e51b815260040180806020018281038252604381526020018061103f6043913960600191505060405180910390fd5b6003546040516000916001600160a01b0316907f322ef0cb3bcc6b6f659770a0acaf7473e9bc6ebe63e04e4f28924c285c8cc5ea908390a3600380546001600160a01b0319169055565b6002546040805163349f642f60e11b8152602060048201819052600b60248301526a64656c65676174696f6e7360a81b604483015291516000936001600160a01b03169263693ec85e9260648082019391829003018186803b1580156103dd57600080fd5b61062b61051a565b6106665760405162461bcd60e51b815260040180806020018281038252604381526020018061103f6043913960600191505060405180910390fd5b600454600160a01b900460ff16156106af5760405162461bcd60e51b8152600401808060200182810382526025815260200180610f796025913960400191505060405180910390fd5b6001600160a01b038216600081815260056020908152604091829020805460ff191685151590811790915582519384529083015280517f10066a997a3cce45646e9584ea21d79351303d3489db0a659324097fd8563f919281900390910190a161071761037a565b60408051631ce6cdb960e31b81526001600160a01b03858116600483015284151560248301529151929091169163e7366dc89160448082019260009290919082900301818387803b15801561076b57600080fd5b505af115801561077f573d6000803e3d6000fd5b505050505050565b6002546040805163349f642f60e11b815260206004820181905260146024830152731cdd185ada5b99d4995dd85c991cd5d85b1b195d60621b604483015291516000936001600160a01b03169263693ec85e9260648082019391829003018186803b1580156103dd57600080fd5b6001546001600160a01b0316331461083e5760405162461bcd60e51b81526004018080602001828103825260288152602001806110176028913960400191505060405180910390fd5b600154610853906001600160a01b0316610ed8565b600180546001600160a01b0319169055565b6002546040805163349f642f60e11b815260206004820181905260076024830152667374616b696e6760c81b604483015291516000936001600160a01b03169263693ec85e9260648082019391829003018186803b1580156103dd57600080fd5b6002546040805163349f642f60e11b8152602060048201819052600d60248301526c737562736372697074696f6e7360981b604483015291516000936001600160a01b03169263693ec85e9260648082019391829003018186803b1580156103dd57600080fd5b61093561051a565b6109705760405162461bcd60e51b815260040180806020018281038252604381526020018061103f6043913960600191505060405180910390fd5b600480546001600160a01b0319166001600160a01b0392909216919091179055565b61099a610356565b6109d55760405162461bcd60e51b8152600401808060200182810382526041815260200180610f9e6041913960600191505060405180910390fd5b600180546001600160a01b0319166001600160a01b0392909216919091179055565b6002546040805163349f642f60e11b8152602060048201819052600d60248301526c31b2b93a34b334b1b0ba34b7b760991b604483015291516000936001600160a01b03169263693ec85e9260648082019391829003018186803b1580156103dd57600080fd5b610a66610356565b610aa15760405162461bcd60e51b8152600401808060200182810382526041815260200180610f9e6041913960600191505060405180910390fd5b6004805460ff60a01b191690556040517f19aad37188a1d3921e29eb3c66acf43d81975e107cb650d58cca878627955fd690600090a1565b6002546040805163349f642f60e11b81526020600482018190526009602483015268636f6d6d697474656560b81b604483015291516000936001600160a01b03169263693ec85e9260648082019391829003018186803b1580156103dd57600080fd5b6002546040805163349f642f60e11b815260206004820181905260076024830152667265776172647360c81b604483015291516000936001600160a01b03169263693ec85e9260648082019391829003018186803b1580156103dd57600080fd5b6002546040805163349f642f60e11b815260206004820181905260086024830152671c1c9bdd1bd8dbdb60c21b604483015291516000936001600160a01b03169263693ec85e9260648082019391829003018186803b1580156103dd57600080fd5b6003546001600160a01b031690565b600454600160a01b900460ff1681565b6001600160a01b031660009081526005602052604090205460ff1690565b6002546040805163349f642f60e11b8152602060048201819052601560248301527433bab0b93234b0b739a932b3b4b9ba3930ba34b7b760591b604483015291516000936001600160a01b03169263693ec85e9260648082019391829003018186803b1580156103dd57600080fd5b6002546040805163349f642f60e11b81526020600482018190526016602483015275189bdbdd1cdd1c985c14995dd85c991cd5d85b1b195d60521b604483015291516000936001600160a01b03169263693ec85e9260648082019391829003018186803b1580156103dd57600080fd5b610d23610356565b610d5e5760405162461bcd60e51b8152600401808060200182810382526041815260200180610f9e6041913960600191505060405180910390fd5b6004805460ff60a01b1916600160a01b1790556040517f0f2e5b6c72c6a4491efd919a9f9a409f324ef0708c11ee57d410c2cb06c0992b90600090a1565b610da4610356565b610ddf5760405162461bcd60e51b8152600401808060200182810382526041815260200180610f9e6041913960600191505060405180910390fd5b600280546001600160a01b0383166001600160a01b0319909116811790915560408051918252517ffea2d033438b968078a6264409d0104b5f3d2ce7b795afc74918e70f3534f22b9181900360200190a150565b3390565b6001600160a01b038116610e7c5760405162461bcd60e51b8152600401808060200182810382526038815260200180610fdf6038913960400191505060405180910390fd5b6003546040516001600160a01b038084169216907f322ef0cb3bcc6b6f659770a0acaf7473e9bc6ebe63e04e4f28924c285c8cc5ea90600090a3600380546001600160a01b0319166001600160a01b0392909216919091179055565b6001600160a01b038116610f1d5760405162461bcd60e51b81526004018080602001828103825260368152602001806110826036913960400191505060405180910390fd5b600080546040516001600160a01b03808516939216917f7e8c4fc74f50849b4ec635ed03f5d13f87cd46ae422e97479704c6fd1c164e2091a3600080546001600160a01b0319166001600160a01b039290921691909117905556fe636f6e7472616374206973206c6f636b656420666f722074686973206f7065726174696f6e57697468436c61696d61626c654d6967726174696f6e4f776e6572736869703a2063616c6c6572206973206e6f7420746865206d6967726174696f6e4f776e657246756e6374696f6e616c4f776e65723a206e65772066756e6374696f6e616c4f776e657220697320746865207a65726f206164647265737343616c6c6572206973206e6f74207468652070656e64696e67206d6967726174696f6e4f776e657257697468436c61696d61626c6546756e6374696f6e616c4f776e6572736869703a2063616c6c6572206973206e6f74207468652066756e6374696f6e616c4f776e65724d6967726174696f6e4f776e65723a206e6577206d6967726174696f6e4f776e657220697320746865207a65726f206164647265737343616c6c6572206973206e6f74207468652070656e64696e672066756e6374696f6e616c4f776e6572a265627a7a72315820e577f66b2010965d55618f44393a131e83d0829d03eb5ce48822365662577d0664736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106101a95760003560e01c80639b9a7e68116100f9578063bed1807d11610097578063ddc0d5d611610071578063ddc0d5d614610318578063ec5e178c14610320578063f83d08ba14610328578063fcd13d6514610330576101a9565b8063bed1807d146102e2578063cf309012146102ea578063dc8b6d73146102f2576101a9565b8063a69df4b5116100d3578063a69df4b5146102c2578063ab6acfc4146102ca578063ad751ed3146102d2578063b5f1c29d146102da576101a9565b80639b9a7e681461026e5780639f587d1c14610294578063a09e0d90146102ba576101a9565b80633b781309116101665780636cdb6746116101405780636cdb67461461024e5780637b93af4c146102565780638e68dce41461025e578063977d4e5a14610266576101a9565b80633b781309146102105780635282346d1461021857806357a5582e14610220576101a9565b8063021abb93146101ae57806311caadfb146101ca5780631dc669f4146101ee578063209df1e2146101f85780632c43bdd5146102005780633a88ab8e14610208575b600080fd5b6101b6610356565b604080519115158252519081900360200190f35b6101d261037a565b604080516001600160a01b039092168252519081900360200190f35b6101f661040e565b005b6101f661047e565b6101d261050b565b6101b661051a565b6101f6610531565b6101d26105be565b6101f66004803603604081101561023657600080fd5b506001600160a01b0381351690602001351515610623565b6101d2610787565b6101f66107f5565b6101d2610865565b6101d26108c6565b6101f66004803603602081101561028457600080fd5b50356001600160a01b031661092d565b6101f6600480360360208110156102aa57600080fd5b50356001600160a01b0316610992565b6101d26109f7565b6101f6610a5e565b6101d2610ad9565b6101d2610b3c565b6101d2610b9d565b6101d2610bff565b6101b6610c0e565b6101b66004803603602081101561030857600080fd5b50356001600160a01b0316610c1e565b6101d2610c3c565b6101d2610cab565b6101f6610d1b565b6101f66004803603602081101561034657600080fd5b50356001600160a01b0316610d9c565b600080546001600160a01b031661036b610e33565b6001600160a01b031614905090565b6002546040805163349f642f60e11b81526020600482018190526009602483015268656c656374696f6e7360b81b604483015291516000936001600160a01b03169263693ec85e9260648082019391829003018186803b1580156103dd57600080fd5b505afa1580156103f1573d6000803e3d6000fd5b505050506040513d602081101561040757600080fd5b5051905090565b6004546001600160a01b031633146104575760405162461bcd60e51b81526004018080602001828103825260298152602001806110b86029913960400191505060405180910390fd5b60045461046c906001600160a01b0316610e37565b600480546001600160a01b0319169055565b610486610356565b6104c15760405162461bcd60e51b8152600401808060200182810382526041815260200180610f9e6041913960600191505060405180910390fd5b600080546040516001600160a01b03909116907f7e8c4fc74f50849b4ec635ed03f5d13f87cd46ae422e97479704c6fd1c164e20908390a3600080546001600160a01b0319169055565b6000546001600160a01b031690565b6003546000906001600160a01b031661036b610e33565b61053961051a565b6105745760405162461bcd60e51b815260040180806020018281038252604381526020018061103f6043913960600191505060405180910390fd5b6003546040516000916001600160a01b0316907f322ef0cb3bcc6b6f659770a0acaf7473e9bc6ebe63e04e4f28924c285c8cc5ea908390a3600380546001600160a01b0319169055565b6002546040805163349f642f60e11b8152602060048201819052600b60248301526a64656c65676174696f6e7360a81b604483015291516000936001600160a01b03169263693ec85e9260648082019391829003018186803b1580156103dd57600080fd5b61062b61051a565b6106665760405162461bcd60e51b815260040180806020018281038252604381526020018061103f6043913960600191505060405180910390fd5b600454600160a01b900460ff16156106af5760405162461bcd60e51b8152600401808060200182810382526025815260200180610f796025913960400191505060405180910390fd5b6001600160a01b038216600081815260056020908152604091829020805460ff191685151590811790915582519384529083015280517f10066a997a3cce45646e9584ea21d79351303d3489db0a659324097fd8563f919281900390910190a161071761037a565b60408051631ce6cdb960e31b81526001600160a01b03858116600483015284151560248301529151929091169163e7366dc89160448082019260009290919082900301818387803b15801561076b57600080fd5b505af115801561077f573d6000803e3d6000fd5b505050505050565b6002546040805163349f642f60e11b815260206004820181905260146024830152731cdd185ada5b99d4995dd85c991cd5d85b1b195d60621b604483015291516000936001600160a01b03169263693ec85e9260648082019391829003018186803b1580156103dd57600080fd5b6001546001600160a01b0316331461083e5760405162461bcd60e51b81526004018080602001828103825260288152602001806110176028913960400191505060405180910390fd5b600154610853906001600160a01b0316610ed8565b600180546001600160a01b0319169055565b6002546040805163349f642f60e11b815260206004820181905260076024830152667374616b696e6760c81b604483015291516000936001600160a01b03169263693ec85e9260648082019391829003018186803b1580156103dd57600080fd5b6002546040805163349f642f60e11b8152602060048201819052600d60248301526c737562736372697074696f6e7360981b604483015291516000936001600160a01b03169263693ec85e9260648082019391829003018186803b1580156103dd57600080fd5b61093561051a565b6109705760405162461bcd60e51b815260040180806020018281038252604381526020018061103f6043913960600191505060405180910390fd5b600480546001600160a01b0319166001600160a01b0392909216919091179055565b61099a610356565b6109d55760405162461bcd60e51b8152600401808060200182810382526041815260200180610f9e6041913960600191505060405180910390fd5b600180546001600160a01b0319166001600160a01b0392909216919091179055565b6002546040805163349f642f60e11b8152602060048201819052600d60248301526c31b2b93a34b334b1b0ba34b7b760991b604483015291516000936001600160a01b03169263693ec85e9260648082019391829003018186803b1580156103dd57600080fd5b610a66610356565b610aa15760405162461bcd60e51b8152600401808060200182810382526041815260200180610f9e6041913960600191505060405180910390fd5b6004805460ff60a01b191690556040517f19aad37188a1d3921e29eb3c66acf43d81975e107cb650d58cca878627955fd690600090a1565b6002546040805163349f642f60e11b81526020600482018190526009602483015268636f6d6d697474656560b81b604483015291516000936001600160a01b03169263693ec85e9260648082019391829003018186803b1580156103dd57600080fd5b6002546040805163349f642f60e11b815260206004820181905260076024830152667265776172647360c81b604483015291516000936001600160a01b03169263693ec85e9260648082019391829003018186803b1580156103dd57600080fd5b6002546040805163349f642f60e11b815260206004820181905260086024830152671c1c9bdd1bd8dbdb60c21b604483015291516000936001600160a01b03169263693ec85e9260648082019391829003018186803b1580156103dd57600080fd5b6003546001600160a01b031690565b600454600160a01b900460ff1681565b6001600160a01b031660009081526005602052604090205460ff1690565b6002546040805163349f642f60e11b8152602060048201819052601560248301527433bab0b93234b0b739a932b3b4b9ba3930ba34b7b760591b604483015291516000936001600160a01b03169263693ec85e9260648082019391829003018186803b1580156103dd57600080fd5b6002546040805163349f642f60e11b81526020600482018190526016602483015275189bdbdd1cdd1c985c14995dd85c991cd5d85b1b195d60521b604483015291516000936001600160a01b03169263693ec85e9260648082019391829003018186803b1580156103dd57600080fd5b610d23610356565b610d5e5760405162461bcd60e51b8152600401808060200182810382526041815260200180610f9e6041913960600191505060405180910390fd5b6004805460ff60a01b1916600160a01b1790556040517f0f2e5b6c72c6a4491efd919a9f9a409f324ef0708c11ee57d410c2cb06c0992b90600090a1565b610da4610356565b610ddf5760405162461bcd60e51b8152600401808060200182810382526041815260200180610f9e6041913960600191505060405180910390fd5b600280546001600160a01b0383166001600160a01b0319909116811790915560408051918252517ffea2d033438b968078a6264409d0104b5f3d2ce7b795afc74918e70f3534f22b9181900360200190a150565b3390565b6001600160a01b038116610e7c5760405162461bcd60e51b8152600401808060200182810382526038815260200180610fdf6038913960400191505060405180910390fd5b6003546040516001600160a01b038084169216907f322ef0cb3bcc6b6f659770a0acaf7473e9bc6ebe63e04e4f28924c285c8cc5ea90600090a3600380546001600160a01b0319166001600160a01b0392909216919091179055565b6001600160a01b038116610f1d5760405162461bcd60e51b81526004018080602001828103825260368152602001806110826036913960400191505060405180910390fd5b600080546040516001600160a01b03808516939216917f7e8c4fc74f50849b4ec635ed03f5d13f87cd46ae422e97479704c6fd1c164e2091a3600080546001600160a01b0319166001600160a01b039290921691909117905556fe636f6e7472616374206973206c6f636b656420666f722074686973206f7065726174696f6e57697468436c61696d61626c654d6967726174696f6e4f776e6572736869703a2063616c6c6572206973206e6f7420746865206d6967726174696f6e4f776e657246756e6374696f6e616c4f776e65723a206e65772066756e6374696f6e616c4f776e657220697320746865207a65726f206164647265737343616c6c6572206973206e6f74207468652070656e64696e67206d6967726174696f6e4f776e657257697468436c61696d61626c6546756e6374696f6e616c4f776e6572736869703a2063616c6c6572206973206e6f74207468652066756e6374696f6e616c4f776e65724d6967726174696f6e4f776e65723a206e6577206d6967726174696f6e4f776e657220697320746865207a65726f206164647265737343616c6c6572206973206e6f74207468652070656e64696e672066756e6374696f6e616c4f776e6572a265627a7a72315820e577f66b2010965d55618f44393a131e83d0829d03eb5ce48822365662577d0664736f6c63430005100032",
+  "sourceMap": "163:665:0:-;;;638:17:20;658:12;-1:-1:-1;;;;;658:10:20;:12;:::i;:::-;680:15;:27;;-1:-1:-1;;;;;;680:27:20;-1:-1:-1;;;;;680:27:20;;;;;;;722:52;;680:27;;-1:-1:-1;680:27:20;722:52;;680:15;;722:52;-1:-1:-1;646:17:19;666:12;-1:-1:-1;;;;;666:10:19;:12;:::i;:::-;688:16;:28;;-1:-1:-1;;;;;;688:28:19;-1:-1:-1;;;;;688:28:19;;;;;;;;731:53;;688:28;;-1:-1:-1;688:28:19;-1:-1:-1;;731:53:19;;-1:-1:-1;;731:53:19;612:179;163:665:0;;788:96:33;867:10;788:96;:::o;163:665:0:-;;;;;;;",
+  "deployedSourceMap": "163:665:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;163:665:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1304:110:20;;;:::i;:::-;;;;;;;;;;;;;;;;;;1357:134:3;;;:::i;:::-;;;;-1:-1:-1;;;;;1357:134:3;;;;;;;;;;;;;;3143:186:19;;;:::i;:::-;;1801:182:20;;;:::i;866:95::-;;;:::i;1323:112:19:-;;;:::i;1827:187::-;;;:::i;1497:142:3:-;;;:::i;516:309:0:-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;516:309:0;;;;;;;;;;:::i;2293:158:3:-;;;:::i;3089:181:20:-;;;:::i;1989:142:3:-;;;:::i;2137:150::-;;;:::i;2890:152:19:-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;2890:152:19;-1:-1:-1;;;;;2890:152:19;;:::i;2842:147:20:-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;2842:147:20;-1:-1:-1;;;;;2842:147:20;;:::i;1833:150:3:-;;;:::i;472:102:11:-;;;:::i;1217:134:3:-;;;:::i;1085:126::-;;;:::i;949:130::-;;;:::i;877:97:19:-;;;:::i;301:18:11:-;;;:::i;375:135:0:-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;375:135:0;-1:-1:-1;;;;;375:135:0;;:::i;1645:182:3:-;;;:::i;2457:162::-;;;:::i;369:97:11:-;;;:::i;723:220:3:-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;723:220:3;-1:-1:-1;;;;;723:220:3;;:::i;1304:110:20:-;1353:4;1392:15;;-1:-1:-1;;;;;1392:15:20;1376:12;:10;:12::i;:::-;-1:-1:-1;;;;;1376:31:20;;1369:38;;1304:110;:::o;1357:134:3:-;1450:16;;:33;;;-1:-1:-1;;;1450:33:3;;;;;;;;;;;;;;-1:-1:-1;;;1450:33:3;;;;;;1410:10;;-1:-1:-1;;;;;1450:16:3;;:20;;:33;;;;;;;;;;;:16;:33;;;5:2:-1;;;;30:1;27;20:12;5:2;1450:33:3;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1450:33:3;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1450:33:3;;-1:-1:-1;1357:134:3;:::o;3143:186:19:-;2622:22;;-1:-1:-1;;;;;2622:22:19;2608:10;:36;2600:90;;;;-1:-1:-1;;;2600:90:19;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3254:22;;3225:52;;-1:-1:-1;;;;;3254:22:19;3225:28;:52::i;:::-;3287:22;:35;;-1:-1:-1;;;;;;3287:35:19;;;3143:186::o;1801:182:20:-;1106:18;:16;:18::i;:::-;1098:96;;;;-1:-1:-1;;;1098:96:20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1935:1;1910:15;;1880:58;;-1:-1:-1;;;;;1910:15:20;;;;1880:58;;1935:1;;1880:58;1974:1;1948:28;;-1:-1:-1;;;;;;1948:28:20;;;1801:182::o;866:95::-;913:7;939:15;-1:-1:-1;;;;;939:15:20;866:95;:::o;1323:112:19:-;1412:16;;1373:4;;-1:-1:-1;;;;;1412:16:19;1396:12;:10;:12::i;1827:187::-;1121:19;:17;:19::i;:::-;1113:99;;;;-1:-1:-1;;;1113:99:19;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1939:16;;1908:60;;1965:1;;-1:-1:-1;;;;;1939:16:19;;1908:60;;1965:1;;1908:60;1978:16;:29;;-1:-1:-1;;;;;;1978:29:19;;;1827:187::o;1497:142:3:-;1596:16;;:35;;;-1:-1:-1;;;1596:35:3;;;;;;;;;;;;;;-1:-1:-1;;;1596:35:3;;;;;;1552:12;;-1:-1:-1;;;;;1596:16:3;;:20;;:35;;;;;;;;;;;:16;:35;;;5:2:-1;;;;30:1;27;20:12;516:309:0;1121:19:19;:17;:19::i;:::-;1113:99;;;;-1:-1:-1;;;1113:99:19;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;625:6:11;;-1:-1:-1;;;625:6:11;;;;624:7;616:57;;;;-1:-1:-1;;;616:57:11;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;636:27:0;;;;;;:21;:27;;;;;;;;;:41;;-1:-1:-1;;636:41:0;;;;;;;;;;692:46;;;;;;;;;;;;;;;;;;;;;748:22;:20;:22::i;:::-;:70;;;-1:-1:-1;;;748:70:0;;-1:-1:-1;;;;;748:70:0;;;;;;;;;;;;;;;;:51;;;;;;;:70;;;;;-1:-1:-1;;748:70:0;;;;;;;;-1:-1:-1;748:51:0;:70;;;5:2:-1;;;;30:1;27;20:12;5:2;748:70:0;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;748:70:0;;;;516:309;;:::o;2293:158:3:-;2399:16;;:44;;;-1:-1:-1;;;2399:44:3;;;;;;;;;;;;;;-1:-1:-1;;;2399:44:3;;;;;;2349:15;;-1:-1:-1;;;;;2399:16:3;;:20;;:44;;;;;;;;;;;:16;:44;;;5:2:-1;;;;30:1;27;20:12;3089:181:20;2579:21;;-1:-1:-1;;;;;2579:21:20;2565:10;:35;2557:88;;;;-1:-1:-1;;;2557:88:20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3197:21;;3169:50;;-1:-1:-1;;;;;3197:21:20;3169:27;:50::i;:::-;3229:21;:34;;-1:-1:-1;;;;;;3229:34:20;;;3089:181::o;1989:142:3:-;2092:16;;:31;;;-1:-1:-1;;;2092:31:3;;;;;;;;;;;;;;-1:-1:-1;;;2092:31:3;;;;;;2040:16;;-1:-1:-1;;;;;2092:16:3;;:20;;:31;;;;;;;;;;;:16;:31;;;5:2:-1;;;;30:1;27;20:12;2137:150:3;2242:16;;:37;;;-1:-1:-1;;;2242:37:3;;;;;;;;;;;;;;-1:-1:-1;;;2242:37:3;;;;;;2194:14;;-1:-1:-1;;;;;2242:16:3;;:20;;:37;;;;;;;;;;;:16;:37;;;5:2:-1;;;;30:1;27;20:12;2890:152:19;1121:19;:17;:19::i;:::-;1113:99;;;;-1:-1:-1;;;1113:99:19;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2992:22;:43;;-1:-1:-1;;;;;;2992:43:19;-1:-1:-1;;;;;2992:43:19;;;;;;;;;;2890:152::o;2842:147:20:-;1106:18;:16;:18::i;:::-;1098:96;;;;-1:-1:-1;;;1098:96:20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2941:21;:41;;-1:-1:-1;;;;;;2941:41:20;-1:-1:-1;;;;;2941:41:20;;;;;;;;;;2842:147::o;1833:150:3:-;1938:16;;:37;;;-1:-1:-1;;;1938:37:3;;;;;;;;;;;;;;-1:-1:-1;;;1938:37:3;;;;;;1890:14;;-1:-1:-1;;;;;1938:16:3;;:20;;:37;;;;;;;;;;;:16;:37;;;5:2:-1;;;;30:1;27;20:12;472:102:11;1106:18:20;:16;:18::i;:::-;1098:96;;;;-1:-1:-1;;;1098:96:20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;528:6:11;:14;;-1:-1:-1;;;;528:14:11;;;557:10;;;;537:5;;557:10;472:102::o;1217:134:3:-;1310:16;;:33;;;-1:-1:-1;;;1310:33:3;;;;;;;;;;;;;;-1:-1:-1;;;1310:33:3;;;;;;1270:10;;-1:-1:-1;;;;;1310:16:3;;:20;;:33;;;;;;;;;;;:16;:33;;;5:2:-1;;;;30:1;27;20:12;1085:126:3;1172:16;;:31;;;-1:-1:-1;;;1172:31:3;;;;;;;;;;;;;;-1:-1:-1;;;1172:31:3;;;;;;1136:8;;-1:-1:-1;;;;;1172:16:3;;:20;;:31;;;;;;;;;;;:16;:31;;;5:2:-1;;;;30:1;27;20:12;949:130:3;1039:16;;:32;;;-1:-1:-1;;;1039:32:3;;;;;;;;;;;;;;-1:-1:-1;;;1039:32:3;;;;;;1001:9;;-1:-1:-1;;;;;1039:16:3;;:20;;:32;;;;;;;;;;;:16;:32;;;5:2:-1;;;;30:1;27;20:12;877:97:19;951:16;;-1:-1:-1;;;;;951:16:19;877:97;:::o;301:18:11:-;;;-1:-1:-1;;;301:18:11;;;;;:::o;375:135:0:-;-1:-1:-1;;;;;476:27:0;441:16;476:27;;;:21;:27;;;;;;;;;375:135::o;1645:182:3:-;1774:16;;:45;;;-1:-1:-1;;;1774:45:3;;;;;;;;;;;;;;-1:-1:-1;;;1774:45:3;;;;;;1710:22;;-1:-1:-1;;;;;1774:16:3;;:20;;:45;;;;;;;;;;;:16;:45;;;5:2:-1;;;;30:1;27;20:12;2457:162:3;2565:16;;:46;;;-1:-1:-1;;;2565:46:3;;;;;;;;;;;;;;-1:-1:-1;;;2565:46:3;;;;;;2515:15;;-1:-1:-1;;;;;2565:16:3;;:20;;:46;;;;;;;;;;;:16;:46;;;5:2:-1;;;;30:1;27;20:12;369:97:11;1106:18:20;:16;:18::i;:::-;1098:96;;;;-1:-1:-1;;;1098:96:20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;423:6:11;:13;;-1:-1:-1;;;;423:13:11;-1:-1:-1;;;423:13:11;;;451:8;;;;423:13;;451:8;369:97::o;723:220:3:-;1106:18:20;:16;:18::i;:::-;1098:96;;;;-1:-1:-1;;;1098:96:20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;827:16:3;:36;;-1:-1:-1;;;;;827:36:3;;-1:-1:-1;;;;;;827:36:3;;;;;;;;878:58;;;;;;;;;;;;;;;;723:220;:::o;788:96:33:-;867:10;788:96;:::o;2125:323:19:-;-1:-1:-1;;;;;2218:32:19;;2210:101;;;;-1:-1:-1;;;2210:101:19;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2357:16;;2326:68;;-1:-1:-1;;;;;2326:68:19;;;;2357:16;;2326:68;;2357:16;;2326:68;2404:16;:37;;-1:-1:-1;;;;;;2404:37:19;-1:-1:-1;;;;;2404:37:19;;;;;;;;;;2125:323::o;2093:313:20:-;-1:-1:-1;;;;;2184:31:20;;2176:98;;;;-1:-1:-1;;;2176:98:20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2319:15;;;2289:65;;-1:-1:-1;;;;;2289:65:20;;;;2319:15;;;2289:65;;;2364:15;:35;;-1:-1:-1;;;;;;2364:35:20;-1:-1:-1;;;;;2364:35:20;;;;;;;;;;2093:313::o",
+  "source": "pragma solidity 0.5.16;\n\nimport \"./spec_interfaces/ICertification.sol\";\nimport \"./ContractRegistryAccessor.sol\";\nimport \"./WithClaimableFunctionalOwnership.sol\";\n\ncontract Certification is ICertification, ContractRegistryAccessor, WithClaimableFunctionalOwnership, Lockable {\n\n    mapping (address => bool) guardianCertification;\n\n    /*\n     * External methods\n     */\n\n    function isGuardianCertified(address addr) external view returns (bool isCertified) {\n        return guardianCertification[addr];\n    }\n\n    function setGuardianCertification(address addr, bool isCertified) external onlyFunctionalOwner onlyWhenActive {\n        guardianCertification[addr] = isCertified;\n        emit GuardianCertificationUpdate(addr, isCertified);\n        getElectionsContract().guardianCertificationChanged(addr, isCertified);\n    }\n\n}\n",
+  "sourcePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/Certification.sol",
+  "ast": {
+    "absolutePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/Certification.sol",
+    "exportedSymbols": {
+      "Certification": [
+        59
+      ]
+    },
+    "id": 60,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "absolutePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/ICertification.sol",
+        "file": "./spec_interfaces/ICertification.sol",
+        "id": 2,
+        "nodeType": "ImportDirective",
+        "scope": 60,
+        "sourceUnit": 10375,
+        "src": "25:46:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/ContractRegistryAccessor.sol",
+        "file": "./ContractRegistryAccessor.sol",
+        "id": 3,
+        "nodeType": "ImportDirective",
+        "scope": 60,
+        "sourceUnit": 1779,
+        "src": "72:40:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/WithClaimableFunctionalOwnership.sol",
+        "file": "./WithClaimableFunctionalOwnership.sol",
+        "id": 4,
+        "nodeType": "ImportDirective",
+        "scope": 60,
+        "sourceUnit": 9828,
+        "src": "113:48:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 5,
+              "name": "ICertification",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 10374,
+              "src": "189:14:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ICertification_$10374",
+                "typeString": "contract ICertification"
+              }
+            },
+            "id": 6,
+            "nodeType": "InheritanceSpecifier",
+            "src": "189:14:0"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 7,
+              "name": "ContractRegistryAccessor",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1778,
+              "src": "205:24:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ContractRegistryAccessor_$1778",
+                "typeString": "contract ContractRegistryAccessor"
+              }
+            },
+            "id": 8,
+            "nodeType": "InheritanceSpecifier",
+            "src": "205:24:0"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 9,
+              "name": "WithClaimableFunctionalOwnership",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 9827,
+              "src": "231:32:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_WithClaimableFunctionalOwnership_$9827",
+                "typeString": "contract WithClaimableFunctionalOwnership"
+              }
+            },
+            "id": 10,
+            "nodeType": "InheritanceSpecifier",
+            "src": "231:32:0"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 11,
+              "name": "Lockable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5110,
+              "src": "265:8:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Lockable_$5110",
+                "typeString": "contract Lockable"
+              }
+            },
+            "id": 12,
+            "nodeType": "InheritanceSpecifier",
+            "src": "265:8:0"
+          }
+        ],
+        "contractDependencies": [
+          1778,
+          5110,
+          9827,
+          9975,
+          10374,
+          11171
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 59,
+        "linearizedBaseContracts": [
+          59,
+          5110,
+          9827,
+          1778,
+          9975,
+          11171,
+          10374
+        ],
+        "name": "Certification",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 16,
+            "name": "guardianCertification",
+            "nodeType": "VariableDeclaration",
+            "scope": 59,
+            "src": "281:47:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+              "typeString": "mapping(address => bool)"
+            },
+            "typeName": {
+              "id": 15,
+              "keyType": {
+                "id": 13,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "290:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "281:25:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                "typeString": "mapping(address => bool)"
+              },
+              "valueType": {
+                "id": 14,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "301:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 27,
+              "nodeType": "Block",
+              "src": "459:51:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 23,
+                      "name": "guardianCertification",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 16,
+                      "src": "476:21:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                        "typeString": "mapping(address => bool)"
+                      }
+                    },
+                    "id": 25,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 24,
+                      "name": "addr",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 18,
+                      "src": "498:4:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "476:27:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 22,
+                  "id": 26,
+                  "nodeType": "Return",
+                  "src": "469:34:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 28,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isGuardianCertified",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 19,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28,
+                  "src": "404:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 17,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "404:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "403:14:0"
+            },
+            "returnParameters": {
+              "id": 22,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 21,
+                  "name": "isCertified",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28,
+                  "src": "441:16:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 20,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "441:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "440:18:0"
+            },
+            "scope": 59,
+            "src": "375:135:0",
+            "stateMutability": "view",
+            "superFunction": 10361,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 57,
+              "nodeType": "Block",
+              "src": "626:199:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 43,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 39,
+                        "name": "guardianCertification",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 16,
+                        "src": "636:21:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 41,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 40,
+                        "name": "addr",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 30,
+                        "src": "658:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "636:27:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 42,
+                      "name": "isCertified",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 32,
+                      "src": "666:11:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "636:41:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 44,
+                  "nodeType": "ExpressionStatement",
+                  "src": "636:41:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 46,
+                        "name": "addr",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 30,
+                        "src": "720:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 47,
+                        "name": "isCertified",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 32,
+                        "src": "726:11:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 45,
+                      "name": "GuardianCertificationUpdate",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10354,
+                      "src": "692:27:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_bool_$returns$__$",
+                        "typeString": "function (address,bool)"
+                      }
+                    },
+                    "id": 48,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "692:46:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 49,
+                  "nodeType": "EmitStatement",
+                  "src": "687:51:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 53,
+                        "name": "addr",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 30,
+                        "src": "800:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 54,
+                        "name": "isCertified",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 32,
+                        "src": "806:11:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "id": 50,
+                          "name": "getElectionsContract",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1686,
+                          "src": "748:20:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$__$returns$_t_contract$_IElections_$10122_$",
+                            "typeString": "function () view returns (contract IElections)"
+                          }
+                        },
+                        "id": 51,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "748:22:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IElections_$10122",
+                          "typeString": "contract IElections"
+                        }
+                      },
+                      "id": 52,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "guardianCertificationChanged",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 10085,
+                      "src": "748:51:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_bool_$returns$__$",
+                        "typeString": "function (address,bool) external"
+                      }
+                    },
+                    "id": 55,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "748:70:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 56,
+                  "nodeType": "ExpressionStatement",
+                  "src": "748:70:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 58,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 35,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 34,
+                  "name": "onlyFunctionalOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 9732,
+                  "src": "591:19:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "591:19:0"
+              },
+              {
+                "arguments": null,
+                "id": 37,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 36,
+                  "name": "onlyWhenActive",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 5109,
+                  "src": "611:14:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "611:14:0"
+              }
+            ],
+            "name": "setGuardianCertification",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 33,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 30,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 58,
+                  "src": "550:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 29,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "550:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 32,
+                  "name": "isCertified",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 58,
+                  "src": "564:16:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 31,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "564:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "549:32:0"
+            },
+            "returnParameters": {
+              "id": 38,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "626:0:0"
+            },
+            "scope": 59,
+            "src": "516:309:0",
+            "stateMutability": "nonpayable",
+            "superFunction": 10368,
+            "visibility": "external"
+          }
+        ],
+        "scope": 60,
+        "src": "163:665:0"
+      }
+    ],
+    "src": "0:829:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/Certification.sol",
+    "exportedSymbols": {
+      "Certification": [
+        59
+      ]
+    },
+    "id": 60,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "absolutePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/ICertification.sol",
+        "file": "./spec_interfaces/ICertification.sol",
+        "id": 2,
+        "nodeType": "ImportDirective",
+        "scope": 60,
+        "sourceUnit": 10375,
+        "src": "25:46:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/ContractRegistryAccessor.sol",
+        "file": "./ContractRegistryAccessor.sol",
+        "id": 3,
+        "nodeType": "ImportDirective",
+        "scope": 60,
+        "sourceUnit": 1779,
+        "src": "72:40:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/WithClaimableFunctionalOwnership.sol",
+        "file": "./WithClaimableFunctionalOwnership.sol",
+        "id": 4,
+        "nodeType": "ImportDirective",
+        "scope": 60,
+        "sourceUnit": 9828,
+        "src": "113:48:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 5,
+              "name": "ICertification",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 10374,
+              "src": "189:14:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ICertification_$10374",
+                "typeString": "contract ICertification"
+              }
+            },
+            "id": 6,
+            "nodeType": "InheritanceSpecifier",
+            "src": "189:14:0"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 7,
+              "name": "ContractRegistryAccessor",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1778,
+              "src": "205:24:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ContractRegistryAccessor_$1778",
+                "typeString": "contract ContractRegistryAccessor"
+              }
+            },
+            "id": 8,
+            "nodeType": "InheritanceSpecifier",
+            "src": "205:24:0"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 9,
+              "name": "WithClaimableFunctionalOwnership",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 9827,
+              "src": "231:32:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_WithClaimableFunctionalOwnership_$9827",
+                "typeString": "contract WithClaimableFunctionalOwnership"
+              }
+            },
+            "id": 10,
+            "nodeType": "InheritanceSpecifier",
+            "src": "231:32:0"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 11,
+              "name": "Lockable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5110,
+              "src": "265:8:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Lockable_$5110",
+                "typeString": "contract Lockable"
+              }
+            },
+            "id": 12,
+            "nodeType": "InheritanceSpecifier",
+            "src": "265:8:0"
+          }
+        ],
+        "contractDependencies": [
+          1778,
+          5110,
+          9827,
+          9975,
+          10374,
+          11171
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 59,
+        "linearizedBaseContracts": [
+          59,
+          5110,
+          9827,
+          1778,
+          9975,
+          11171,
+          10374
+        ],
+        "name": "Certification",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 16,
+            "name": "guardianCertification",
+            "nodeType": "VariableDeclaration",
+            "scope": 59,
+            "src": "281:47:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+              "typeString": "mapping(address => bool)"
+            },
+            "typeName": {
+              "id": 15,
+              "keyType": {
+                "id": 13,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "290:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "281:25:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                "typeString": "mapping(address => bool)"
+              },
+              "valueType": {
+                "id": 14,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "301:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 27,
+              "nodeType": "Block",
+              "src": "459:51:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 23,
+                      "name": "guardianCertification",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 16,
+                      "src": "476:21:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                        "typeString": "mapping(address => bool)"
+                      }
+                    },
+                    "id": 25,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 24,
+                      "name": "addr",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 18,
+                      "src": "498:4:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "476:27:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 22,
+                  "id": 26,
+                  "nodeType": "Return",
+                  "src": "469:34:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 28,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isGuardianCertified",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 19,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28,
+                  "src": "404:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 17,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "404:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "403:14:0"
+            },
+            "returnParameters": {
+              "id": 22,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 21,
+                  "name": "isCertified",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28,
+                  "src": "441:16:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 20,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "441:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "440:18:0"
+            },
+            "scope": 59,
+            "src": "375:135:0",
+            "stateMutability": "view",
+            "superFunction": 10361,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 57,
+              "nodeType": "Block",
+              "src": "626:199:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 43,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 39,
+                        "name": "guardianCertification",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 16,
+                        "src": "636:21:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 41,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 40,
+                        "name": "addr",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 30,
+                        "src": "658:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "636:27:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 42,
+                      "name": "isCertified",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 32,
+                      "src": "666:11:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "636:41:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 44,
+                  "nodeType": "ExpressionStatement",
+                  "src": "636:41:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 46,
+                        "name": "addr",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 30,
+                        "src": "720:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 47,
+                        "name": "isCertified",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 32,
+                        "src": "726:11:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 45,
+                      "name": "GuardianCertificationUpdate",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10354,
+                      "src": "692:27:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_bool_$returns$__$",
+                        "typeString": "function (address,bool)"
+                      }
+                    },
+                    "id": 48,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "692:46:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 49,
+                  "nodeType": "EmitStatement",
+                  "src": "687:51:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 53,
+                        "name": "addr",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 30,
+                        "src": "800:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 54,
+                        "name": "isCertified",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 32,
+                        "src": "806:11:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "id": 50,
+                          "name": "getElectionsContract",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1686,
+                          "src": "748:20:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$__$returns$_t_contract$_IElections_$10122_$",
+                            "typeString": "function () view returns (contract IElections)"
+                          }
+                        },
+                        "id": 51,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "748:22:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IElections_$10122",
+                          "typeString": "contract IElections"
+                        }
+                      },
+                      "id": 52,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "guardianCertificationChanged",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 10085,
+                      "src": "748:51:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_bool_$returns$__$",
+                        "typeString": "function (address,bool) external"
+                      }
+                    },
+                    "id": 55,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "748:70:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 56,
+                  "nodeType": "ExpressionStatement",
+                  "src": "748:70:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 58,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 35,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 34,
+                  "name": "onlyFunctionalOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 9732,
+                  "src": "591:19:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "591:19:0"
+              },
+              {
+                "arguments": null,
+                "id": 37,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 36,
+                  "name": "onlyWhenActive",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 5109,
+                  "src": "611:14:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "611:14:0"
+              }
+            ],
+            "name": "setGuardianCertification",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 33,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 30,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 58,
+                  "src": "550:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 29,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "550:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 32,
+                  "name": "isCertified",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 58,
+                  "src": "564:16:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 31,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "564:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "549:32:0"
+            },
+            "returnParameters": {
+              "id": 38,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "626:0:0"
+            },
+            "scope": 59,
+            "src": "516:309:0",
+            "stateMutability": "nonpayable",
+            "superFunction": 10368,
+            "visibility": "external"
+          }
+        ],
+        "scope": 60,
+        "src": "163:665:0"
+      }
+    ],
+    "src": "0:829:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.23",
+  "updatedAt": "2020-08-06T21:58:43.667Z",
+  "devdoc": {
+    "methods": {
+      "claimFunctionalOwnership()": {
+        "details": "Allows the pendingFunctionalOwner address to finalize the transfer."
+      },
+      "claimMigrationOwnership()": {
+        "details": "Allows the pendingMigrationOwner address to finalize the transfer."
+      },
+      "functionalOwner()": {
+        "details": "Returns the address of the current functionalOwner."
+      },
+      "isFunctionalOwner()": {
+        "details": "Returns true if the caller is the current functionalOwner."
+      },
+      "isMigrationOwner()": {
+        "details": "Returns true if the caller is the current migrationOwner."
+      },
+      "migrationOwner()": {
+        "details": "Returns the address of the current migrationOwner."
+      },
+      "renounceFunctionalOwnership()": {
+        "details": "Leaves the contract without functionalOwner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current functionalOwner.     * NOTE: Renouncing functionalOwnership will leave the contract without an functionalOwner, thereby removing any functionality that is only available to the functionalOwner."
+      },
+      "renounceMigrationOwnership()": {
+        "details": "Leaves the contract without migrationOwner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current migrationOwner.     * NOTE: Renouncing migrationOwnership will leave the contract without an migrationOwner, thereby removing any functionality that is only available to the migrationOwner."
+      },
+      "transferFunctionalOwnership(address)": {
+        "details": "Allows the current functionalOwner to set the pendingOwner address.",
+        "params": {
+          "newFunctionalOwner": "The address to transfer functionalOwnership to."
+        }
+      },
+      "transferMigrationOwnership(address)": {
+        "details": "Allows the current migrationOwner to set the pendingOwner address.",
+        "params": {
+          "newMigrationOwner": "The address to transfer migrationOwnership to."
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

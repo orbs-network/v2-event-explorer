@@ -1,0 +1,4355 @@
+{
+  "contractName": "IGuardiansRegistration",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes4",
+          "name": "ip",
+          "type": "bytes4"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "orbsAddr",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "website",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "contact",
+          "type": "string"
+        }
+      ],
+      "name": "GuardianDataUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "key",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "newValue",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "oldValue",
+          "type": "string"
+        }
+      ],
+      "name": "GuardianMetadataChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        }
+      ],
+      "name": "GuardianRegistered",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        }
+      ],
+      "name": "GuardianUnregistered",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes4",
+          "name": "ip",
+          "type": "bytes4"
+        },
+        {
+          "internalType": "address",
+          "name": "orbsAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "website",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "contact",
+          "type": "string"
+        }
+      ],
+      "name": "registerGuardian",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes4",
+          "name": "ip",
+          "type": "bytes4"
+        },
+        {
+          "internalType": "address",
+          "name": "orbsAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "website",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "contact",
+          "type": "string"
+        }
+      ],
+      "name": "updateGuardian",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes4",
+          "name": "ip",
+          "type": "bytes4"
+        }
+      ],
+      "name": "updateGuardianIp",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "key",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "value",
+          "type": "string"
+        }
+      ],
+      "name": "setMetadata",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "key",
+          "type": "string"
+        }
+      ],
+      "name": "getMetadata",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "unregisterGuardian",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        }
+      ],
+      "name": "getGuardianData",
+      "outputs": [
+        {
+          "internalType": "bytes4",
+          "name": "ip",
+          "type": "bytes4"
+        },
+        {
+          "internalType": "address",
+          "name": "orbsAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "website",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "contact",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "registration_time",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "last_update_time",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "addrs",
+          "type": "address[]"
+        }
+      ],
+      "name": "getGuardiansOrbsAddress",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "orbsAddrs",
+          "type": "address[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        }
+      ],
+      "name": "getGuardianIp",
+      "outputs": [
+        {
+          "internalType": "bytes4",
+          "name": "ip",
+          "type": "bytes4"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "addr",
+          "type": "address[]"
+        }
+      ],
+      "name": "getGuardianIps",
+      "outputs": [
+        {
+          "internalType": "bytes4[]",
+          "name": "ips",
+          "type": "bytes4[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        }
+      ],
+      "name": "isRegistered",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "ethereumAddrs",
+          "type": "address[]"
+        }
+      ],
+      "name": "getOrbsAddresses",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "orbsAddr",
+          "type": "address[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "orbsAddrs",
+          "type": "address[]"
+        }
+      ],
+      "name": "getEthereumAddresses",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "ethereumAddr",
+          "type": "address[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "ethereumOrOrbsAddress",
+          "type": "address"
+        }
+      ],
+      "name": "resolveGuardianAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "mainAddress",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes4\",\"name\":\"ip\",\"type\":\"bytes4\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"orbsAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"website\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"contact\",\"type\":\"string\"}],\"name\":\"GuardianDataUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"key\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"newValue\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"oldValue\",\"type\":\"string\"}],\"name\":\"GuardianMetadataChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"}],\"name\":\"GuardianRegistered\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"}],\"name\":\"GuardianUnregistered\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"orbsAddrs\",\"type\":\"address[]\"}],\"name\":\"getEthereumAddresses\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"ethereumAddr\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"}],\"name\":\"getGuardianData\",\"outputs\":[{\"internalType\":\"bytes4\",\"name\":\"ip\",\"type\":\"bytes4\"},{\"internalType\":\"address\",\"name\":\"orbsAddr\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"website\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"contact\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"registration_time\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"last_update_time\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"}],\"name\":\"getGuardianIp\",\"outputs\":[{\"internalType\":\"bytes4\",\"name\":\"ip\",\"type\":\"bytes4\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"addr\",\"type\":\"address[]\"}],\"name\":\"getGuardianIps\",\"outputs\":[{\"internalType\":\"bytes4[]\",\"name\":\"ips\",\"type\":\"bytes4[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"addrs\",\"type\":\"address[]\"}],\"name\":\"getGuardiansOrbsAddress\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"orbsAddrs\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"key\",\"type\":\"string\"}],\"name\":\"getMetadata\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"ethereumAddrs\",\"type\":\"address[]\"}],\"name\":\"getOrbsAddresses\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"orbsAddr\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"}],\"name\":\"isRegistered\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"ip\",\"type\":\"bytes4\"},{\"internalType\":\"address\",\"name\":\"orbsAddr\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"website\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"contact\",\"type\":\"string\"}],\"name\":\"registerGuardian\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"ethereumOrOrbsAddress\",\"type\":\"address\"}],\"name\":\"resolveGuardianAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"mainAddress\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"key\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"value\",\"type\":\"string\"}],\"name\":\"setMetadata\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"unregisterGuardian\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"ip\",\"type\":\"bytes4\"},{\"internalType\":\"address\",\"name\":\"orbsAddr\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"website\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"contact\",\"type\":\"string\"}],\"name\":\"updateGuardian\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"ip\",\"type\":\"bytes4\"}],\"name\":\"updateGuardianIp\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"getEthereumAddresses(address[])\":{\"details\":\"Translates a list guardians Orbs addresses to Ethereum addresses Used by the Election contract\"},\"getGuardianData(address)\":{\"details\":\"Returns a guardian's data Used also by the Election contract\"},\"getGuardianIp(address)\":{\"details\":\"Returns a guardian's ip Used also by the Election contract\"},\"getGuardianIps(address[])\":{\"details\":\"Returns guardian ips\"},\"getGuardiansOrbsAddress(address[])\":{\"details\":\"Returns the Orbs addresses of a list of guardians Used also by the committee contract\"},\"getMetadata(address,string)\":{\"details\":\"Called by a participant to get additional guardian metadata properties.\"},\"getOrbsAddresses(address[])\":{\"details\":\"Translates a list guardians Ethereum addresses to Orbs addresses Used by the Election contract\"},\"isRegistered(address)\":{\"details\":\"Returns true if the given address is of a registered guardian Used also by the Election contract\"},\"registerGuardian(bytes4,address,string,string,string)\":{\"details\":\"Called by a participant who wishes to register as a guardian\"},\"resolveGuardianAddress(address)\":{\"details\":\"Resolves the ethereum address for a guardian, given an Ethereum/Orbs address\"},\"setMetadata(string,string)\":{\"details\":\"Called by a participant to update additional guardian metadata properties.\"},\"unregisterGuardian()\":{\"details\":\"Called by a participant who wishes to unregister\"},\"updateGuardian(bytes4,address,string,string,string)\":{\"details\":\"Called by a participant who wishes to update its propertires\"},\"updateGuardianIp(bytes4)\":{\"details\":\"Called by a participant who wishes to update its IP address (can be call by both main and Orbs addresses)\"}},\"title\":\"Elections contract interface\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IGuardiansRegistration.sol\":\"IGuardiansRegistration\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IContractRegistry.sol\":{\"keccak256\":\"0x6af72993f6951883689d3e90e92861e4de1779810f9e0ace7212f12af251255c\",\"urls\":[\"bzz-raw://772374609c24adfc2e1e6ca8157e4d9b9b730636ddef7c91353492f0b15738c6\",\"dweb:/ipfs/QmTAZvGKEy4CaA8jQG4LkXDiBeL5CbyWMg6ypTVXCm1ipM\"]},\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IGuardiansRegistration.sol\":{\"keccak256\":\"0x0dbc5c1e9be819c761afee64c3462897a23c49432484c64fbd83f56ecce2a564\",\"urls\":[\"bzz-raw://d481c035a16b09ee043efe0a825f72e076d21fb638dee691fbdfd49e544723d1\",\"dweb:/ipfs/Qme81DYhm8vCgniMzQpPyoQWffq4j93hMxGjpRSoVdzEX5\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity 0.5.16;\n\nimport \"./IContractRegistry.sol\";\n\n/// @title Elections contract interface\ninterface IGuardiansRegistration {\n\tevent GuardianRegistered(address addr);\n\tevent GuardianDataUpdated(address addr, bytes4 ip, address orbsAddr, string name, string website, string contact);\n\tevent GuardianUnregistered(address addr);\n\tevent GuardianMetadataChanged(address addr, string key, string newValue, string oldValue);\n\n\t/*\n     * External methods\n     */\n\n    /// @dev Called by a participant who wishes to register as a guardian\n\tfunction registerGuardian(bytes4 ip, address orbsAddr, string calldata name, string calldata website, string calldata contact) external;\n\n    /// @dev Called by a participant who wishes to update its propertires\n\tfunction updateGuardian(bytes4 ip, address orbsAddr, string calldata name, string calldata website, string calldata contact) external;\n\n\t/// @dev Called by a participant who wishes to update its IP address (can be call by both main and Orbs addresses)\n\tfunction updateGuardianIp(bytes4 ip) external /* onlyWhenActive */;\n\n    /// @dev Called by a participant to update additional guardian metadata properties.\n    function setMetadata(string calldata key, string calldata value) external;\n\n    /// @dev Called by a participant to get additional guardian metadata properties.\n    function getMetadata(address addr, string calldata key) external view returns (string memory);\n\n    /// @dev Called by a participant who wishes to unregister\n\tfunction unregisterGuardian() external;\n\n    /// @dev Returns a guardian's data\n    /// Used also by the Election contract\n\tfunction getGuardianData(address addr) external view returns (bytes4 ip, address orbsAddr, string memory name, string memory website, string memory contact, uint registration_time, uint last_update_time);\n\n\t/// @dev Returns the Orbs addresses of a list of guardians\n\t/// Used also by the committee contract\n\tfunction getGuardiansOrbsAddress(address[] calldata addrs) external view returns (address[] memory orbsAddrs);\n\n\t/// @dev Returns a guardian's ip\n\t/// Used also by the Election contract\n\tfunction getGuardianIp(address addr) external view returns (bytes4 ip);\n\n\t/// @dev Returns guardian ips\n\tfunction getGuardianIps(address[] calldata addr) external view returns (bytes4[] memory ips);\n\n\n\t/// @dev Returns true if the given address is of a registered guardian\n\t/// Used also by the Election contract\n\tfunction isRegistered(address addr) external view returns (bool);\n\n\t/*\n     * Methods restricted to other Orbs contracts\n     */\n\n    /// @dev Translates a list guardians Ethereum addresses to Orbs addresses\n    /// Used by the Election contract\n\tfunction getOrbsAddresses(address[] calldata ethereumAddrs) external view returns (address[] memory orbsAddr);\n\n\t/// @dev Translates a list guardians Orbs addresses to Ethereum addresses\n\t/// Used by the Election contract\n\tfunction getEthereumAddresses(address[] calldata orbsAddrs) external view returns (address[] memory ethereumAddr);\n\n\t/// @dev Resolves the ethereum address for a guardian, given an Ethereum/Orbs address\n\tfunction resolveGuardianAddress(address ethereumOrOrbsAddress) external view returns (address mainAddress);\n\n}\n",
+  "sourcePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IGuardiansRegistration.sol",
+  "ast": {
+    "absolutePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IGuardiansRegistration.sol",
+    "exportedSymbols": {
+      "IGuardiansRegistration": [
+        10916
+      ]
+    },
+    "id": 10917,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 10756,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:29"
+      },
+      {
+        "absolutePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IContractRegistry.sol",
+        "file": "./IContractRegistry.sol",
+        "id": 10757,
+        "nodeType": "ImportDirective",
+        "scope": 10917,
+        "sourceUnit": 10535,
+        "src": "25:33:29",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title Elections contract interface",
+        "fullyImplemented": false,
+        "id": 10916,
+        "linearizedBaseContracts": [
+          10916
+        ],
+        "name": "IGuardiansRegistration",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10761,
+            "name": "GuardianRegistered",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10760,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10759,
+                  "indexed": false,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10761,
+                  "src": "161:12:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10758,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "161:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "160:14:29"
+            },
+            "src": "136:39:29"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10775,
+            "name": "GuardianDataUpdated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10774,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10763,
+                  "indexed": false,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10775,
+                  "src": "203:12:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10762,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "203:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10765,
+                  "indexed": false,
+                  "name": "ip",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10775,
+                  "src": "217:9:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 10764,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "217:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10767,
+                  "indexed": false,
+                  "name": "orbsAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10775,
+                  "src": "228:16:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10766,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "228:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10769,
+                  "indexed": false,
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10775,
+                  "src": "246:11:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10768,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "246:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10771,
+                  "indexed": false,
+                  "name": "website",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10775,
+                  "src": "259:14:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10770,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "259:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10773,
+                  "indexed": false,
+                  "name": "contact",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10775,
+                  "src": "275:14:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10772,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "275:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "202:88:29"
+            },
+            "src": "177:114:29"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10779,
+            "name": "GuardianUnregistered",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10778,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10777,
+                  "indexed": false,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10779,
+                  "src": "320:12:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10776,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "320:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "319:14:29"
+            },
+            "src": "293:41:29"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10789,
+            "name": "GuardianMetadataChanged",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10788,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10781,
+                  "indexed": false,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10789,
+                  "src": "366:12:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10780,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "366:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10783,
+                  "indexed": false,
+                  "name": "key",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10789,
+                  "src": "380:10:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10782,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "380:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10785,
+                  "indexed": false,
+                  "name": "newValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10789,
+                  "src": "392:15:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10784,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "392:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10787,
+                  "indexed": false,
+                  "name": "oldValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10789,
+                  "src": "409:15:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10786,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "409:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "365:60:29"
+            },
+            "src": "336:90:29"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by a participant who wishes to register as a guardian",
+            "id": 10802,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "registerGuardian",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10800,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10791,
+                  "name": "ip",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10802,
+                  "src": "566:9:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 10790,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "566:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10793,
+                  "name": "orbsAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10802,
+                  "src": "577:16:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10792,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "577:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10795,
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10802,
+                  "src": "595:20:29",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10794,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "595:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10797,
+                  "name": "website",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10802,
+                  "src": "617:23:29",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10796,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "617:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10799,
+                  "name": "contact",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10802,
+                  "src": "642:23:29",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10798,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "642:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "565:101:29"
+            },
+            "returnParameters": {
+              "id": 10801,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "675:0:29"
+            },
+            "scope": 10916,
+            "src": "540:136:29",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by a participant who wishes to update its propertires",
+            "id": 10815,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateGuardian",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10813,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10804,
+                  "name": "ip",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10815,
+                  "src": "777:9:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 10803,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "777:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10806,
+                  "name": "orbsAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10815,
+                  "src": "788:16:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10805,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "788:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10808,
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10815,
+                  "src": "806:20:29",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10807,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "806:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10810,
+                  "name": "website",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10815,
+                  "src": "828:23:29",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10809,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "828:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10812,
+                  "name": "contact",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10815,
+                  "src": "853:23:29",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10811,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "853:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "776:101:29"
+            },
+            "returnParameters": {
+              "id": 10814,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "886:0:29"
+            },
+            "scope": 10916,
+            "src": "753:134:29",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by a participant who wishes to update its IP address (can be call by both main and Orbs addresses)",
+            "id": 10820,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateGuardianIp",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10818,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10817,
+                  "name": "ip",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10820,
+                  "src": "1032:9:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 10816,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1032:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1031:11:29"
+            },
+            "returnParameters": {
+              "id": 10819,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1072:0:29"
+            },
+            "scope": 10916,
+            "src": "1006:67:29",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by a participant to update additional guardian metadata properties.",
+            "id": 10827,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setMetadata",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10825,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10822,
+                  "name": "key",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10827,
+                  "src": "1188:19:29",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10821,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1188:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10824,
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10827,
+                  "src": "1209:21:29",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10823,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1209:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1187:44:29"
+            },
+            "returnParameters": {
+              "id": 10826,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1240:0:29"
+            },
+            "scope": 10916,
+            "src": "1167:74:29",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by a participant to get additional guardian metadata properties.",
+            "id": 10836,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getMetadata",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10832,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10829,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10836,
+                  "src": "1353:12:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10828,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1353:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10831,
+                  "name": "key",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10836,
+                  "src": "1367:19:29",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10830,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1367:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1352:35:29"
+            },
+            "returnParameters": {
+              "id": 10835,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10834,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10836,
+                  "src": "1411:13:29",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10833,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1411:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1410:15:29"
+            },
+            "scope": 10916,
+            "src": "1332:94:29",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by a participant who wishes to unregister",
+            "id": 10839,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "unregisterGuardian",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10837,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1518:2:29"
+            },
+            "returnParameters": {
+              "id": 10838,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1529:0:29"
+            },
+            "scope": 10916,
+            "src": "1491:39:29",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Returns a guardian's data\n Used also by the Election contract",
+            "id": 10858,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getGuardianData",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10842,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10841,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10858,
+                  "src": "1640:12:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10840,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1640:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1639:14:29"
+            },
+            "returnParameters": {
+              "id": 10857,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10844,
+                  "name": "ip",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10858,
+                  "src": "1677:9:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 10843,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1677:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10846,
+                  "name": "orbsAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10858,
+                  "src": "1688:16:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10845,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1688:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10848,
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10858,
+                  "src": "1706:18:29",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10847,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1706:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10850,
+                  "name": "website",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10858,
+                  "src": "1726:21:29",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10849,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1726:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10852,
+                  "name": "contact",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10858,
+                  "src": "1749:21:29",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10851,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1749:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10854,
+                  "name": "registration_time",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10858,
+                  "src": "1772:22:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10853,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1772:4:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10856,
+                  "name": "last_update_time",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10858,
+                  "src": "1796:21:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10855,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1796:4:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1676:142:29"
+            },
+            "scope": 10916,
+            "src": "1615:204:29",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Returns the Orbs addresses of a list of guardians\n Used also by the committee contract",
+            "id": 10867,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getGuardiansOrbsAddress",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10862,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10861,
+                  "name": "addrs",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10867,
+                  "src": "1956:24:29",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 10859,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1956:7:29",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 10860,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1956:9:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1955:26:29"
+            },
+            "returnParameters": {
+              "id": 10866,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10865,
+                  "name": "orbsAddrs",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10867,
+                  "src": "2005:26:29",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 10863,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2005:7:29",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 10864,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2005:9:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2004:28:29"
+            },
+            "scope": 10916,
+            "src": "1923:110:29",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Returns a guardian's ip\n Used also by the Election contract",
+            "id": 10874,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getGuardianIp",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10870,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10869,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10874,
+                  "src": "2133:12:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10868,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2133:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2132:14:29"
+            },
+            "returnParameters": {
+              "id": 10873,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10872,
+                  "name": "ip",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10874,
+                  "src": "2170:9:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 10871,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2170:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2169:11:29"
+            },
+            "scope": 10916,
+            "src": "2110:71:29",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Returns guardian ips",
+            "id": 10883,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getGuardianIps",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10878,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10877,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10883,
+                  "src": "2239:23:29",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 10875,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2239:7:29",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 10876,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2239:9:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2238:25:29"
+            },
+            "returnParameters": {
+              "id": 10882,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10881,
+                  "name": "ips",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10883,
+                  "src": "2287:19:29",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes4_$dyn_memory_ptr",
+                    "typeString": "bytes4[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 10879,
+                      "name": "bytes4",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2287:6:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes4",
+                        "typeString": "bytes4"
+                      }
+                    },
+                    "id": 10880,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2287:8:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes4_$dyn_storage_ptr",
+                      "typeString": "bytes4[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2286:21:29"
+            },
+            "scope": 10916,
+            "src": "2215:93:29",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Returns true if the given address is of a registered guardian\n Used also by the Election contract",
+            "id": 10890,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isRegistered",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10886,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10885,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10890,
+                  "src": "2446:12:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10884,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2446:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2445:14:29"
+            },
+            "returnParameters": {
+              "id": 10889,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10888,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10890,
+                  "src": "2483:4:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 10887,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2483:4:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2482:6:29"
+            },
+            "scope": 10916,
+            "src": "2424:65:29",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Translates a list guardians Ethereum addresses to Orbs addresses\n Used by the Election contract",
+            "id": 10899,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getOrbsAddresses",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10894,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10893,
+                  "name": "ethereumAddrs",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10899,
+                  "src": "2697:32:29",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 10891,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2697:7:29",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 10892,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2697:9:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2696:34:29"
+            },
+            "returnParameters": {
+              "id": 10898,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10897,
+                  "name": "orbsAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10899,
+                  "src": "2754:25:29",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 10895,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2754:7:29",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 10896,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2754:9:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2753:27:29"
+            },
+            "scope": 10916,
+            "src": "2671:110:29",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Translates a list guardians Orbs addresses to Ethereum addresses\n Used by the Election contract",
+            "id": 10908,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getEthereumAddresses",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10903,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10902,
+                  "name": "orbsAddrs",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10908,
+                  "src": "2924:28:29",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 10900,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2924:7:29",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 10901,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2924:9:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2923:30:29"
+            },
+            "returnParameters": {
+              "id": 10907,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10906,
+                  "name": "ethereumAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10908,
+                  "src": "2977:29:29",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 10904,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2977:7:29",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 10905,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2977:9:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2976:31:29"
+            },
+            "scope": 10916,
+            "src": "2894:114:29",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Resolves the ethereum address for a guardian, given an Ethereum/Orbs address",
+            "id": 10915,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "resolveGuardianAddress",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10911,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10910,
+                  "name": "ethereumOrOrbsAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10915,
+                  "src": "3130:29:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10909,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3130:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3129:31:29"
+            },
+            "returnParameters": {
+              "id": 10914,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10913,
+                  "name": "mainAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10915,
+                  "src": "3184:19:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10912,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3184:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3183:21:29"
+            },
+            "scope": 10916,
+            "src": "3098:107:29",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 10917,
+        "src": "100:3108:29"
+      }
+    ],
+    "src": "0:3209:29"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IGuardiansRegistration.sol",
+    "exportedSymbols": {
+      "IGuardiansRegistration": [
+        10916
+      ]
+    },
+    "id": 10917,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 10756,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:29"
+      },
+      {
+        "absolutePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/IContractRegistry.sol",
+        "file": "./IContractRegistry.sol",
+        "id": 10757,
+        "nodeType": "ImportDirective",
+        "scope": 10917,
+        "sourceUnit": 10535,
+        "src": "25:33:29",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title Elections contract interface",
+        "fullyImplemented": false,
+        "id": 10916,
+        "linearizedBaseContracts": [
+          10916
+        ],
+        "name": "IGuardiansRegistration",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10761,
+            "name": "GuardianRegistered",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10760,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10759,
+                  "indexed": false,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10761,
+                  "src": "161:12:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10758,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "161:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "160:14:29"
+            },
+            "src": "136:39:29"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10775,
+            "name": "GuardianDataUpdated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10774,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10763,
+                  "indexed": false,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10775,
+                  "src": "203:12:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10762,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "203:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10765,
+                  "indexed": false,
+                  "name": "ip",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10775,
+                  "src": "217:9:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 10764,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "217:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10767,
+                  "indexed": false,
+                  "name": "orbsAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10775,
+                  "src": "228:16:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10766,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "228:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10769,
+                  "indexed": false,
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10775,
+                  "src": "246:11:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10768,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "246:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10771,
+                  "indexed": false,
+                  "name": "website",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10775,
+                  "src": "259:14:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10770,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "259:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10773,
+                  "indexed": false,
+                  "name": "contact",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10775,
+                  "src": "275:14:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10772,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "275:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "202:88:29"
+            },
+            "src": "177:114:29"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10779,
+            "name": "GuardianUnregistered",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10778,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10777,
+                  "indexed": false,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10779,
+                  "src": "320:12:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10776,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "320:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "319:14:29"
+            },
+            "src": "293:41:29"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 10789,
+            "name": "GuardianMetadataChanged",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 10788,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10781,
+                  "indexed": false,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10789,
+                  "src": "366:12:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10780,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "366:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10783,
+                  "indexed": false,
+                  "name": "key",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10789,
+                  "src": "380:10:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10782,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "380:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10785,
+                  "indexed": false,
+                  "name": "newValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10789,
+                  "src": "392:15:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10784,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "392:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10787,
+                  "indexed": false,
+                  "name": "oldValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10789,
+                  "src": "409:15:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10786,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "409:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "365:60:29"
+            },
+            "src": "336:90:29"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by a participant who wishes to register as a guardian",
+            "id": 10802,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "registerGuardian",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10800,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10791,
+                  "name": "ip",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10802,
+                  "src": "566:9:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 10790,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "566:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10793,
+                  "name": "orbsAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10802,
+                  "src": "577:16:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10792,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "577:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10795,
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10802,
+                  "src": "595:20:29",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10794,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "595:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10797,
+                  "name": "website",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10802,
+                  "src": "617:23:29",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10796,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "617:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10799,
+                  "name": "contact",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10802,
+                  "src": "642:23:29",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10798,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "642:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "565:101:29"
+            },
+            "returnParameters": {
+              "id": 10801,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "675:0:29"
+            },
+            "scope": 10916,
+            "src": "540:136:29",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by a participant who wishes to update its propertires",
+            "id": 10815,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateGuardian",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10813,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10804,
+                  "name": "ip",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10815,
+                  "src": "777:9:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 10803,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "777:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10806,
+                  "name": "orbsAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10815,
+                  "src": "788:16:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10805,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "788:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10808,
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10815,
+                  "src": "806:20:29",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10807,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "806:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10810,
+                  "name": "website",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10815,
+                  "src": "828:23:29",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10809,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "828:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10812,
+                  "name": "contact",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10815,
+                  "src": "853:23:29",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10811,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "853:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "776:101:29"
+            },
+            "returnParameters": {
+              "id": 10814,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "886:0:29"
+            },
+            "scope": 10916,
+            "src": "753:134:29",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by a participant who wishes to update its IP address (can be call by both main and Orbs addresses)",
+            "id": 10820,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateGuardianIp",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10818,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10817,
+                  "name": "ip",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10820,
+                  "src": "1032:9:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 10816,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1032:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1031:11:29"
+            },
+            "returnParameters": {
+              "id": 10819,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1072:0:29"
+            },
+            "scope": 10916,
+            "src": "1006:67:29",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by a participant to update additional guardian metadata properties.",
+            "id": 10827,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setMetadata",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10825,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10822,
+                  "name": "key",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10827,
+                  "src": "1188:19:29",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10821,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1188:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10824,
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10827,
+                  "src": "1209:21:29",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10823,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1209:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1187:44:29"
+            },
+            "returnParameters": {
+              "id": 10826,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1240:0:29"
+            },
+            "scope": 10916,
+            "src": "1167:74:29",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by a participant to get additional guardian metadata properties.",
+            "id": 10836,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getMetadata",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10832,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10829,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10836,
+                  "src": "1353:12:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10828,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1353:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10831,
+                  "name": "key",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10836,
+                  "src": "1367:19:29",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10830,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1367:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1352:35:29"
+            },
+            "returnParameters": {
+              "id": 10835,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10834,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10836,
+                  "src": "1411:13:29",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10833,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1411:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1410:15:29"
+            },
+            "scope": 10916,
+            "src": "1332:94:29",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Called by a participant who wishes to unregister",
+            "id": 10839,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "unregisterGuardian",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10837,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1518:2:29"
+            },
+            "returnParameters": {
+              "id": 10838,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1529:0:29"
+            },
+            "scope": 10916,
+            "src": "1491:39:29",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Returns a guardian's data\n Used also by the Election contract",
+            "id": 10858,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getGuardianData",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10842,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10841,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10858,
+                  "src": "1640:12:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10840,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1640:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1639:14:29"
+            },
+            "returnParameters": {
+              "id": 10857,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10844,
+                  "name": "ip",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10858,
+                  "src": "1677:9:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 10843,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1677:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10846,
+                  "name": "orbsAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10858,
+                  "src": "1688:16:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10845,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1688:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10848,
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10858,
+                  "src": "1706:18:29",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10847,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1706:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10850,
+                  "name": "website",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10858,
+                  "src": "1726:21:29",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10849,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1726:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10852,
+                  "name": "contact",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10858,
+                  "src": "1749:21:29",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10851,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1749:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10854,
+                  "name": "registration_time",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10858,
+                  "src": "1772:22:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10853,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1772:4:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10856,
+                  "name": "last_update_time",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10858,
+                  "src": "1796:21:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10855,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1796:4:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1676:142:29"
+            },
+            "scope": 10916,
+            "src": "1615:204:29",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Returns the Orbs addresses of a list of guardians\n Used also by the committee contract",
+            "id": 10867,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getGuardiansOrbsAddress",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10862,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10861,
+                  "name": "addrs",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10867,
+                  "src": "1956:24:29",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 10859,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1956:7:29",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 10860,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1956:9:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1955:26:29"
+            },
+            "returnParameters": {
+              "id": 10866,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10865,
+                  "name": "orbsAddrs",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10867,
+                  "src": "2005:26:29",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 10863,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2005:7:29",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 10864,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2005:9:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2004:28:29"
+            },
+            "scope": 10916,
+            "src": "1923:110:29",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Returns a guardian's ip\n Used also by the Election contract",
+            "id": 10874,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getGuardianIp",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10870,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10869,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10874,
+                  "src": "2133:12:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10868,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2133:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2132:14:29"
+            },
+            "returnParameters": {
+              "id": 10873,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10872,
+                  "name": "ip",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10874,
+                  "src": "2170:9:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 10871,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2170:6:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2169:11:29"
+            },
+            "scope": 10916,
+            "src": "2110:71:29",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Returns guardian ips",
+            "id": 10883,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getGuardianIps",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10878,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10877,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10883,
+                  "src": "2239:23:29",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 10875,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2239:7:29",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 10876,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2239:9:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2238:25:29"
+            },
+            "returnParameters": {
+              "id": 10882,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10881,
+                  "name": "ips",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10883,
+                  "src": "2287:19:29",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes4_$dyn_memory_ptr",
+                    "typeString": "bytes4[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 10879,
+                      "name": "bytes4",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2287:6:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes4",
+                        "typeString": "bytes4"
+                      }
+                    },
+                    "id": 10880,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2287:8:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes4_$dyn_storage_ptr",
+                      "typeString": "bytes4[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2286:21:29"
+            },
+            "scope": 10916,
+            "src": "2215:93:29",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Returns true if the given address is of a registered guardian\n Used also by the Election contract",
+            "id": 10890,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isRegistered",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10886,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10885,
+                  "name": "addr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10890,
+                  "src": "2446:12:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10884,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2446:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2445:14:29"
+            },
+            "returnParameters": {
+              "id": 10889,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10888,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10890,
+                  "src": "2483:4:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 10887,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2483:4:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2482:6:29"
+            },
+            "scope": 10916,
+            "src": "2424:65:29",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Translates a list guardians Ethereum addresses to Orbs addresses\n Used by the Election contract",
+            "id": 10899,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getOrbsAddresses",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10894,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10893,
+                  "name": "ethereumAddrs",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10899,
+                  "src": "2697:32:29",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 10891,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2697:7:29",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 10892,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2697:9:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2696:34:29"
+            },
+            "returnParameters": {
+              "id": 10898,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10897,
+                  "name": "orbsAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10899,
+                  "src": "2754:25:29",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 10895,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2754:7:29",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 10896,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2754:9:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2753:27:29"
+            },
+            "scope": 10916,
+            "src": "2671:110:29",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Translates a list guardians Orbs addresses to Ethereum addresses\n Used by the Election contract",
+            "id": 10908,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getEthereumAddresses",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10903,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10902,
+                  "name": "orbsAddrs",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10908,
+                  "src": "2924:28:29",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 10900,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2924:7:29",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 10901,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2924:9:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2923:30:29"
+            },
+            "returnParameters": {
+              "id": 10907,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10906,
+                  "name": "ethereumAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10908,
+                  "src": "2977:29:29",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 10904,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2977:7:29",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 10905,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2977:9:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2976:31:29"
+            },
+            "scope": 10916,
+            "src": "2894:114:29",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Resolves the ethereum address for a guardian, given an Ethereum/Orbs address",
+            "id": 10915,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "resolveGuardianAddress",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10911,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10910,
+                  "name": "ethereumOrOrbsAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10915,
+                  "src": "3130:29:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10909,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3130:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3129:31:29"
+            },
+            "returnParameters": {
+              "id": 10914,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10913,
+                  "name": "mainAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10915,
+                  "src": "3184:19:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10912,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3184:7:29",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3183:21:29"
+            },
+            "scope": 10916,
+            "src": "3098:107:29",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 10917,
+        "src": "100:3108:29"
+      }
+    ],
+    "src": "0:3209:29"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.23",
+  "updatedAt": "2020-08-06T21:58:43.825Z",
+  "devdoc": {
+    "methods": {
+      "getEthereumAddresses(address[])": {
+        "details": "Translates a list guardians Orbs addresses to Ethereum addresses Used by the Election contract"
+      },
+      "getGuardianData(address)": {
+        "details": "Returns a guardian's data Used also by the Election contract"
+      },
+      "getGuardianIp(address)": {
+        "details": "Returns a guardian's ip Used also by the Election contract"
+      },
+      "getGuardianIps(address[])": {
+        "details": "Returns guardian ips"
+      },
+      "getGuardiansOrbsAddress(address[])": {
+        "details": "Returns the Orbs addresses of a list of guardians Used also by the committee contract"
+      },
+      "getMetadata(address,string)": {
+        "details": "Called by a participant to get additional guardian metadata properties."
+      },
+      "getOrbsAddresses(address[])": {
+        "details": "Translates a list guardians Ethereum addresses to Orbs addresses Used by the Election contract"
+      },
+      "isRegistered(address)": {
+        "details": "Returns true if the given address is of a registered guardian Used also by the Election contract"
+      },
+      "registerGuardian(bytes4,address,string,string,string)": {
+        "details": "Called by a participant who wishes to register as a guardian"
+      },
+      "resolveGuardianAddress(address)": {
+        "details": "Resolves the ethereum address for a guardian, given an Ethereum/Orbs address"
+      },
+      "setMetadata(string,string)": {
+        "details": "Called by a participant to update additional guardian metadata properties."
+      },
+      "unregisterGuardian()": {
+        "details": "Called by a participant who wishes to unregister"
+      },
+      "updateGuardian(bytes4,address,string,string,string)": {
+        "details": "Called by a participant who wishes to update its propertires"
+      },
+      "updateGuardianIp(bytes4)": {
+        "details": "Called by a participant who wishes to update its IP address (can be call by both main and Orbs addresses)"
+      }
+    },
+    "title": "Elections contract interface"
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

@@ -1,0 +1,327 @@
+{
+  "contractName": "ICommitteeListener",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "addrs",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "stakes",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "committeeChanged",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"addrs\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"stakes\",\"type\":\"uint256[]\"}],\"name\":\"committeeChanged\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/ICommitteeListener.sol\":\"ICommitteeListener\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/ICommitteeListener.sol\":{\"keccak256\":\"0x43651b2817c252b8996ae6c5aa2517ce3870b94fabcd444a2f2647c3d787c915\",\"urls\":[\"bzz-raw://5859ec8abd92b72482940155edf77d76c3997a7d3875710e014ae472360ec587\",\"dweb:/ipfs/QmeGiUQ3fKZbVi6uDMXdNszf6nTn1BWNsbztyTwsoNygzU\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity 0.5.16;\n\ninterface ICommitteeListener {\n    function committeeChanged(address[] calldata addrs, uint256[] calldata stakes) external;\n}\n",
+  "sourcePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/ICommitteeListener.sol",
+  "ast": {
+    "absolutePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/ICommitteeListener.sol",
+    "exportedSymbols": {
+      "ICommitteeListener": [
+        10437
+      ]
+    },
+    "id": 10438,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 10427,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:25"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 10437,
+        "linearizedBaseContracts": [
+          10437
+        ],
+        "name": "ICommitteeListener",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 10436,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "committeeChanged",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10434,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10430,
+                  "name": "addrs",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10436,
+                  "src": "86:24:25",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 10428,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "86:7:25",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 10429,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "86:9:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10433,
+                  "name": "stakes",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10436,
+                  "src": "112:25:25",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 10431,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "112:7:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 10432,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "112:9:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "85:53:25"
+            },
+            "returnParameters": {
+              "id": 10435,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "147:0:25"
+            },
+            "scope": 10437,
+            "src": "60:88:25",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 10438,
+        "src": "25:125:25"
+      }
+    ],
+    "src": "0:151:25"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/aviramstern/GolandProjects/orbs-ethereum-contracts-v2/contracts/spec_interfaces/ICommitteeListener.sol",
+    "exportedSymbols": {
+      "ICommitteeListener": [
+        10437
+      ]
+    },
+    "id": 10438,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 10427,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:25"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 10437,
+        "linearizedBaseContracts": [
+          10437
+        ],
+        "name": "ICommitteeListener",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 10436,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "committeeChanged",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10434,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10430,
+                  "name": "addrs",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10436,
+                  "src": "86:24:25",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 10428,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "86:7:25",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 10429,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "86:9:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10433,
+                  "name": "stakes",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10436,
+                  "src": "112:25:25",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 10431,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "112:7:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 10432,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "112:9:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "85:53:25"
+            },
+            "returnParameters": {
+              "id": 10435,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "147:0:25"
+            },
+            "scope": 10437,
+            "src": "60:88:25",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 10438,
+        "src": "25:125:25"
+      }
+    ],
+    "src": "0:151:25"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.23",
+  "updatedAt": "2020-07-27T07:33:26.948Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
