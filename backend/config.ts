@@ -4,7 +4,7 @@ export const Config = {
 
     // Ethereum node
     EthereumUrl: process.env.ETHEREUM_URL || "https://mainnet.infura.io/v3/13a2077319f44f2a85c0c41aaf858e25",
-    MaxTimeBetweenCallsMs: 100,
+    MaxTimeBetweenCallsMs: 200,
 
     // Contracts
     ContractRegistryName: "ContractRegistry",
