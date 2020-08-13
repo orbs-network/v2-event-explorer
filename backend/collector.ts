@@ -40,7 +40,7 @@ class EventCollector {
 
     private calcToBlock(fromBlock: number, latestBlock: number, contractTrackings: IContractTracking[]): number {
         const minTrackingEdge = Math.min.apply(null, contractTrackings.map(t => t.end_block || latestBlock))
-        return Math.min.call(null, fromBlock + 10000, latestBlock, minTrackingEdge)
+        return Math.min.call(null, fromBlock + 20000, latestBlock, minTrackingEdge)
     }
 
     private async collect(): Promise<{remainingBlocks: number}> {
