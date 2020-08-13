@@ -50,7 +50,6 @@ class EventCollector {
         let toBlock = this.calcToBlock(fromBlock, latestBlock, contractTrackings);
 
         if (fromBlock > toBlock) {
-            await sleep(5*1000);
             return {remainingBlocks: 0};
         }
 
@@ -93,13 +92,13 @@ class EventCollector {
             try {
                 const {remainingBlocks} = await this.collect();
                 if (remainingBlocks < 10) {
-                    await sleep(10*1000);
+                    await sleep(30*1000);
                 }
             } catch(e) {
                 console.error(new Error(`collect function returned with error: ${e.toString()}`))
                 await sleep(10*1000);
             }
-        }
+        }ª
     }
 
     private async handleBlockEvents(blockEvents: IEvent[]): Promise<boolean> {
