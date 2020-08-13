@@ -73,12 +73,10 @@ export class EventsExplorerPage extends React.Component<{events?: Events}, {}> {
             this.props.events.limit = parseInt(params.get("limit")) || 10;
             this.search();
         }
+        load();
         window.onpopstate = () => {
             load();
         };
-
-        this.eventNameInput.value = this.props.events.eventName || "";
-        this.searchTextInput.value = this.props.events.searchText || "";
     }
 
     render() {
