@@ -10,34 +10,54 @@ const app = express()
 const apiRouter = express.Router();
 
 apiRouter.get("/events", async (req, res) => {
-    const params: {
-        offset: number,
-        limit: number,
-        eventName?: string,
-        searchText?: string
-    } = req.query as any;
+    try {
+        const params: {
+            offset: number,
+            limit: number,
+            eventName?: string,
+            searchText?: string
+        } = req.query as any;
 
-    res.json(await db.getEvents(
-        params.offset,
-        params.limit,
-        params.eventName,
-        params.searchText
-    ));
+        res.json(await db.getEvents(
+            params.offset,
+            params.limit,
+            params.eventName,
+            params.searchText
+        ));
+    } catch (e) {
+        console.error(e);
+        res.status(500).send({error: e.toString()});
+    }
 })
 
 apiRouter.get("/address_lookup", async (req, res) => {
-    res.json(await db.getAddressLookups());
+    try {
+        res.json(await db.getAddressLookups());
+    } catch (e) {
+        console.error(e);
+        res.status(500).send({error: e.toString()});
+    }
 })
 
 apiRouter.get("/event_names", async (req, res) => {
-    res.json(_.uniq(eventDefinitions.map(e => e.name)));
+    try {
+        res.json(_.uniq(eventDefinitions.map(e => e.name)));
+    } catch (e) {
+        console.error(e);
+        res.status(500).send({error: e.toString()});
+    }
 })
 
 apiRouter.get("/sync_status", async (req, res) => {
-    res.json({
-        latestBlock: await getLatestBlockNumber(),
-        topSyncedBlock: await db.getTopBlockSynced()
-    });
+    try {
+        res.json({
+            latestBlock: await getLatestBlockNumber(),
+            topSyncedBlock: await db.getTopBlockSynced()
+        });
+    } catch (e) {
+        console.error(e);
+        res.status(500).send({error: e.toString()});
+    }
 })
 
 app.use(require("cors")())
