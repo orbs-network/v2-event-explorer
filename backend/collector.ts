@@ -98,7 +98,7 @@ class EventCollector {
                 console.error(new Error(`collect function returned with error: ${e.toString()}`))
                 await sleep(10*1000);
             }
-        }ª
+        }
     }
 
     private async handleBlockEvents(blockEvents: IEvent[]): Promise<boolean> {
