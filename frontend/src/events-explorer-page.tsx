@@ -130,7 +130,7 @@ export class EventsExplorerPage extends React.Component<{events?: Events}, {}> {
                         <Table stickyHeader aria-label="sticky table">
                             <TableHead>
                                 <TableRow>
-                                    <TableCell>Timestamp</TableCell>
+                                    <TableCell>Timestamp (UTC)</TableCell>
                                     <TableCell>Contract</TableCell>
                                     <TableCell>Event</TableCell>
                                     <TableCell>Data</TableCell>
@@ -141,7 +141,7 @@ export class EventsExplorerPage extends React.Component<{events?: Events}, {}> {
                                     <TableRow hover role="checkbox" tabIndex={-1}>
                                         <TableCell>
                                             <div style={{display: "inlineBlock", paddingTop: 17}}>
-                                                {moment(event.event_timestamp_seconds * 1000).format("MMMM Do YYYY, hh:mm:ss")}<br/>
+                                                {moment.utc(event.event_timestamp_seconds * 1000).format("MMMM Do YYYY, hh:mm:ss")}<br/>
                                                 <span className={"block-span"} style={{fontSize: 12}}> Block <EtherscanBlockLink block={event.block_number}/>&nbsp;&nbsp;&nbsp;</span><EtherscanTxnLink txn={event.tx_hash} caption={"Txn"}/>
                                             </div>
                                         </TableCell>
