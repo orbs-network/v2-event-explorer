@@ -60,18 +60,13 @@ export class EventsExplorerPage extends React.Component<{events?: Events}, {}> {
     private eventNameInput: HTMLInputElement;
     private searchTextInput: HTMLInputElement;
 
-    componentWillMount() {
-        this.props.events.load();
-    }
-
     componentDidMount() {
         const load = () => {
             const params = new URLSearchParams(window.location.search);
             this.searchTextInput.value = params.get("searchText") || "";
             this.eventNameInput.value = params.get("eventName") || "";
-            this.props.events.offset = parseInt(params.get("offset")) || 0;
             this.props.events.limit = parseInt(params.get("limit")) || 10;
-            this.search();
+            this.search(parseInt(params.get("offset")) || 0);
         }
         load();
         window.onpopstate = () => {
@@ -163,9 +158,9 @@ export class EventsExplorerPage extends React.Component<{events?: Events}, {}> {
         </div>
     }
 
-    private search() {
+    private search(offset?: number) {
         const eventsStore = this.props.events;
-        eventsStore.offset = 0;
+        eventsStore.offset = offset || 0;
         eventsStore.eventName = this.eventNameInput.value.trim();
         eventsStore.searchText = this.searchTextInput.value.trim();
         eventsStore.load();

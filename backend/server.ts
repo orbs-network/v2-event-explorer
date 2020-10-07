@@ -12,15 +12,15 @@ const apiRouter = express.Router();
 apiRouter.get("/events", async (req, res) => {
     try {
         const params: {
-            offset: number,
-            limit: number,
+            offset: string,
+            limit: string,
             eventName?: string,
             searchText?: string
         } = req.query as any;
 
         res.json(await db.getEvents(
-            params.offset,
-            params.limit,
+            parseInt(params.offset),
+            parseInt(params.limit),
             params.eventName,
             params.searchText
         ));
