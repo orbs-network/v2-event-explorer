@@ -8,9 +8,12 @@ export const Config = {
 
     // Contracts
     ContractRegistryName: "ContractRegistry",
-    ContractRegistryAddress: process.env.CONTRACT_REGISTRY_ADDRESS || "0x10bFdCc77E998Eb849a18c79b880F8b9BE06Ad83",
-    ContractNames: process.env.CONTRACT_NAMES ? JSON.parse(process.env.CONTRACT_NAMES || "") : ['Protocol',
-        'Rewards',
+    ContractRegistryAddress: process.env.CONTRACT_REGISTRY_ADDRESS || "0x5454223e3078Db87e55a15bE541cc925f3702eB0",
+    ContractNames: process.env.CONTRACT_NAMES ? JSON.parse(process.env.CONTRACT_NAMES || "") : [
+        'StakingContractHandler',
+        'Protocol',
+        'StakingRewards',
+        'FeesAndBootstrapRewards',
         'Committee',
         'Elections',
         'Delegations',
@@ -20,13 +23,14 @@ export const Config = {
         'Subscriptions',
         'ProtocolWallet',
         'ProtocolWallet',
-        // 'FeesWallet',
-        // 'FeesWallet'
-    ]
-    ,
+        'FeesWallet',
+        'FeesWallet'
+    ],
     ContractKeys: process.env.CONTRACT_KEYS ? JSON.parse(process.env.CONTRACT_KEYS || "") : [
+        "stakingContractHandler",
         "protocol",
-        "rewards",
+        "stakingRewards",
+        "feesAndBootstrapRewards",
         "committee",
         "elections",
         "delegations",
@@ -36,12 +40,17 @@ export const Config = {
         "subscriptions",
         "stakingRewardsWallet",
         "bootstrapRewardsWallet",
-        // "generalFeesWallet",
-        // "certifiedFeesWallet"
+        "generalFeesWallet",
+        "certifiedFeesWallet"
     ],
-    ContractsAbiDirPath: "../abi",
 
-    startBlock: parseInt(process.env.START_BLOCK || (10503643).toString()),
+    InitialAddresses: {
+        "guardiansRegistration": "0xAB7F3d56Da621Cff1F5646642d7F79f6A201E4eD"
+    },
+
+    ContractsAbiDirPath: "../node_modules/@orbs-network/orbs-ethereum-contracts-v2/release/build/contracts",
+
+    startBlock: parseInt(process.env.START_BLOCK || (11054300).toString()),
 
     // Server
     Port: process.env.PORT || 8123,

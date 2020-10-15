@@ -62,7 +62,7 @@ class EventCollector {
             )
         }
 
-        events = _.sortBy(events, ["blockNumber", "txIndex", "eventIdx"]);
+        events = _.sortBy(events, ["block_number", "tx_index", "event_idx"]);
 
         let eventsToAdd: IEvent[] = []
 
@@ -88,6 +88,13 @@ class EventCollector {
 
     async start() {
         await db.addContractTracking(Config.ContractRegistryAddress, Config.ContractRegistryName, "contractRegistry", Config.startBlock);
+        for (const key in Config.InitialAddresses) {
+            const addr = (Config.InitialAddresses as any)[key];
+            const name = contractKeyToName[key];
+            await db.addContractTracking(addr, name, key, Config.startBlock);
+            console.log('Added initial contract tracking:' + [addr, name, key, Config.startBlock]);
+        }
+
         for (;;) {
             try {
                 const {remainingBlocks} = await this.collect();
@@ -113,7 +120,7 @@ class EventCollector {
             }
 
             if (event.event_name == 'GuardianDataUpdated') {
-                await db.setAddressLookup(event.parsed_data.addr, `${event.parsed_data.name} [Guardian]`,  `${event.parsed_data.name} [Guardian]`)
+                await db.setAddressLookup(event.parsed_data.guardian, `${event.parsed_data.name} [Guardian]`,  `${event.parsed_data.name} [Guardian]`)
                 await db.setAddressLookup(event.parsed_data.orbsAddr, `${event.parsed_data.name} [Node]`,  `${event.parsed_data.name} [Node]`)
             }
         }

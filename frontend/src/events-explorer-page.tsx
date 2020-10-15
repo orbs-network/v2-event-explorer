@@ -141,7 +141,7 @@ export class EventsExplorerPage extends React.Component<{events?: Events}, {}> {
                                     <TableRow hover role="checkbox" tabIndex={-1}>
                                         <TableCell>
                                             <div style={{display: "inlineBlock", paddingTop: 17}}>
-                                                {moment.utc(event.event_timestamp_seconds * 1000).format("MMMM Do YYYY, hh:mm:ss")}<br/>
+                                                {moment.utc(event.event_timestamp_seconds * 1000).format("MMMM Do YYYY, HH:mm:ss")}<br/>
                                                 <span className={"block-span"} style={{fontSize: 12}}> Block <EtherscanBlockLink block={event.block_number}/>&nbsp;&nbsp;&nbsp;</span><EtherscanTxnLink txn={event.tx_hash} caption={"Txn"}/>
                                             </div>
                                         </TableCell>
