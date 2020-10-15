@@ -8,7 +8,7 @@ export const Config = {
 
     // Contracts
     ContractRegistryName: "ContractRegistry",
-    ContractRegistryAddress: process.env.CONTRACT_REGISTRY_ADDRESS || "0x10bFdCc77E998Eb849a18c79b880F8b9BE06Ad83",
+    ContractRegistryAddress: process.env.CONTRACT_REGISTRY_ADDRESS || "0x5454223e3078Db87e55a15bE541cc925f3702eB0",
     ContractNames: process.env.CONTRACT_NAMES ? JSON.parse(process.env.CONTRACT_NAMES || "") : ['Protocol',
         'Rewards',
         'Committee',
