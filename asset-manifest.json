@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "https://orbs-network.github.io/v2-event-dashboard/static/css/main.d4b27514.chunk.css",
-    "main.js": "https://orbs-network.github.io/v2-event-dashboard/static/js/main.718b71ea.chunk.js",
-    "main.js.map": "https://orbs-network.github.io/v2-event-dashboard/static/js/main.718b71ea.chunk.js.map",
+    "main.js": "https://orbs-network.github.io/v2-event-dashboard/static/js/main.deed7d5f.chunk.js",
+    "main.js.map": "https://orbs-network.github.io/v2-event-dashboard/static/js/main.deed7d5f.chunk.js.map",
     "runtime-main.js": "https://orbs-network.github.io/v2-event-dashboard/static/js/runtime-main.7473390d.js",
     "runtime-main.js.map": "https://orbs-network.github.io/v2-event-dashboard/static/js/runtime-main.7473390d.js.map",
     "static/js/2.04847cfc.chunk.js": "https://orbs-network.github.io/v2-event-dashboard/static/js/2.04847cfc.chunk.js",
     "static/js/2.04847cfc.chunk.js.map": "https://orbs-network.github.io/v2-event-dashboard/static/js/2.04847cfc.chunk.js.map",
     "index.html": "https://orbs-network.github.io/v2-event-dashboard/index.html",
-    "precache-manifest.38a4c1808783f73ea2780da571b4cca4.js": "https://orbs-network.github.io/v2-event-dashboard/precache-manifest.38a4c1808783f73ea2780da571b4cca4.js",
+    "precache-manifest.4e3e12241c0d19bb17919f8a35ada11c.js": "https://orbs-network.github.io/v2-event-dashboard/precache-manifest.4e3e12241c0d19bb17919f8a35ada11c.js",
     "service-worker.js": "https://orbs-network.github.io/v2-event-dashboard/service-worker.js",
     "static/css/main.d4b27514.chunk.css.map": "https://orbs-network.github.io/v2-event-dashboard/static/css/main.d4b27514.chunk.css.map",
     "static/js/2.04847cfc.chunk.js.LICENSE.txt": "https://orbs-network.github.io/v2-event-dashboard/static/js/2.04847cfc.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.7473390d.js",
     "static/js/2.04847cfc.chunk.js",
     "static/css/main.d4b27514.chunk.css",
-    "static/js/main.718b71ea.chunk.js"
+    "static/js/main.deed7d5f.chunk.js"
   ]
 }

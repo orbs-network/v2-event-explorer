@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5aedc4dafcee885558e869671e5f9aab",
+    "revision": "d2a6098efac65b80300a89bb7d48743f",
     "url": "https://orbs-network.github.io/v2-event-dashboard/index.html"
   },
   {
-    "revision": "68e6d3bd39f31400aff5",
+    "revision": "31be8036e396aa51cd89",
     "url": "https://orbs-network.github.io/v2-event-dashboard/static/css/main.d4b27514.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://orbs-network.github.io/v2-event-dashboard/static/js/2.04847cfc.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "68e6d3bd39f31400aff5",
-    "url": "https://orbs-network.github.io/v2-event-dashboard/static/js/main.718b71ea.chunk.js"
+    "revision": "31be8036e396aa51cd89",
+    "url": "https://orbs-network.github.io/v2-event-dashboard/static/js/main.deed7d5f.chunk.js"
   },
   {
     "revision": "9a37b2f01e2053dfe74b",
