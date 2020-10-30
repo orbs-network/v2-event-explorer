@@ -2,7 +2,7 @@ import Web3 from "web3";
 import * as Eth from 'web3-eth-contract';
 import * as _ from "lodash";
 import {Config} from "./config";
-import {compiledContracts, signatureToEvent} from "./compiled-contracts";
+import {signatureToEvent} from "./compiled-contracts";
 import {ethereumCaller} from "./eth-call";
 import {IEvent} from "../types";
 
@@ -21,7 +21,7 @@ export interface IContractMetadata {
 const contractCache: {[addr: string]: Eth.Contract} = {};
 function getContract(name: string, address: string): Eth.Contract {
     if (contractCache[address] == null) {
-        const abi = compiledContracts[name].abi;
+        const abi = require(`@orbs-network/orbs-ethereum-contracts-v2/abi/${name}.abi.json`);
         contractCache[address] = new web3.eth.Contract(abi, address);
     }
 
@@ -68,7 +68,7 @@ export async function listEvents(contractMetadata: IContractMetadata, fromBlock:
     }));
 
     return events.map(event => {
-        const eventAbi = signatureToEvent[event.topics[0]].abi;
+        const eventAbi = signatureToEvent[event.topics[0]]?.abi;
         const parseData = eventAbi == null ? {
             parsed: false,
             event_name: "<unknown>",
