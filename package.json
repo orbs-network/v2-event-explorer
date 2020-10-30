@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@orbs-network/orbs-ethereum-contracts-v2": "0.0.31"
+    "@orbs-network/orbs-ethereum-contracts-v2": "0.0.31",
+    "body-parser": "^1.19.0"
   }
 }

@@ -3,7 +3,7 @@ export const Config = {
     PostgresConnStr: process.env.POSTGRES_CONN_STR || "postgresql://localhost:5432/postgres",
 
     // Ethereum node
-    EthereumUrl: process.env.ETHEREUM_URL || "https://mainnet.infura.io/v3/9ed81f1575464b3e9db4187ee4fa1f8a",
+    EthereumUrl: process.env.ETHEREUM_URL || "https://mainnet.infura.io/v3/13a2077319f44f2a85c0c41aaf858e25",
     MaxTimeBetweenCallsMs: 300,
 
     // Contracts
