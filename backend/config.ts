@@ -8,7 +8,7 @@ export const Config = {
 
     // Contracts
     ContractRegistryName: "ContractRegistry",
-    ContractRegistryAddress: process.env.CONTRACT_REGISTRY_ADDRESS || "0x5454223e3078Db87e55a15bE541cc925f3702eB0",
+    ContractRegistryAddress: process.env.CONTRACT_REGISTRY_ADDRESS || "0xD859701C81119aB12A1e62AF6270aD2AE05c7AB3",
     ContractNames: process.env.CONTRACT_NAMES ? JSON.parse(process.env.CONTRACT_NAMES || "") : [
         'StakingContractHandler',
         'Protocol',
@@ -45,7 +45,6 @@ export const Config = {
     ],
 
     InitialAddresses: {
-        "guardiansRegistration": "0xAB7F3d56Da621Cff1F5646642d7F79f6A201E4eD"
     },
 
     ContractsAbiDirPath: "../node_modules/@orbs-network/orbs-ethereum-contracts-v2/release/build/contracts",
